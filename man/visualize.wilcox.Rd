@@ -1,0 +1,49 @@
+\name{visualize.wilcox}
+\alias{visualize.wilcox}
+\title{
+Visualize Cauchy Distribution
+}
+\description{
+Generates a plot of the Wilcoxon Rank Sum distribution with user specified parameters.}
+\usage{
+visualize.wilcox(stat = 1, m = 7, n = 3, section = "lower")
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{stat}{
+a statistic to obtain the probability from. When using the "bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.
+}
+  \item{m}{
+Sample size from group 1.
+}
+  \item{n}{
+Sample size from group 2.
+}
+  \item{section}{
+  Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+}
+}
+
+\value{
+Returns a plot of the distribution according to the conditions supplied.
+}
+
+
+\author{
+James Balamuta
+}
+
+\seealso{
+  \code{\link{visualize.it}}, \code{\link{dwilcox}}.
+}
+\examples{
+#Evaluates lower tail.
+visualize.wilcox(stat = 1, m = 7, n = 3, section = "lower") 
+
+#Evaluates bounded region.
+visualize.wilcox(stat = c(2,3), m = 5, n = 4, section = "bounded") 
+
+#Evaluates upper tail.
+visualize.wilcox(stat = 1, m = 7, n = 3, section = "upper") 
+}
+\keyword{ visualize }

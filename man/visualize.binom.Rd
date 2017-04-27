@@ -7,14 +7,14 @@ Visualize Binomial Distribution
 Generates a plot of the Binomial distribution with user specified parameters.
 }
 \usage{
-visualize.binom(stat = 1, n = 3, prob = 0.5, section = "lower")
+visualize.binom(stat = 1, size = 3, prob = 0.5, section = "lower")
 }
 
 \arguments{
   \item{stat}{
    a statistic to obtain the probability from. When using the "bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.
 }
-  \item{n}{
+  \item{size}{
    size of sample.
 }
   \item{prob}{
@@ -37,12 +37,12 @@ James Balamuta
 }
 \examples{
 #Evaluates lower tail.
-visualize.binom(stat = 1, n = 3, prob = 0.5, section = "lower") 
+visualize.binom(stat = 1, size = 3, prob = 0.5, section = "lower") 
 
 #Evaluates bounded region.
-visualize.binom(stat = c(1,2), n = 5, prob = 0.35, section = "bounded")
+visualize.binom(stat = c(1,2), size = 5, prob = 0.35, section = "bounded")
 
 #Evaluates upper tail.
-visualize.binom(stat = 1, n = 3, prob = 0.5, section = "upper")
+visualize.binom(stat = 1, size = 3, prob = 0.5, section = "upper")
 }
 \keyword{ visualize }

@@ -16,17 +16,17 @@ visualize.distributions = list(
       var = (shape1 * shape2)/((shape1 + shape2 + 1)*(shape1 + shape2)^2)
       c(mean, var)
     },
-    density = function(x,params, noncent = 0, lowtail = TRUE, problog = FALSE, ...){
+    density = function(x,params, ncp = 0, lower.tail = TRUE, log = FALSE, ...){
       if(params[[1]] <= 0 || params[[2]] <= 0) stop("Error: Need alpha, beta  > 0")
-        dbeta(x,params[[1]], params[[2]], ncp = noncent, log = problog)
+        dbeta(x,params[[1]], params[[2]], ncp = ncp, log = log)
     },
-    probability = function(q,params, noncent = 0, lowtail = TRUE, problog = FALSE, ...){
+    probability = function(q,params, ncp = 0, lower.tail = TRUE, log.p = FALSE, ...){
       if(params[[1]] <= 0 || params[[2]] <= 0) stop("Error: Need alpha, beta  > 0")
-      pbeta(q,params[[1]], params[[2]], ncp = noncent, lower.tail = lowtail, log.p = problog)
+      pbeta(q,params[[1]], params[[2]], ncp = ncp, lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p,params, noncent = 0, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p,params, ncp = 0, lower.tail = TRUE, log.p = FALSE, ...){
       if(params[[1]] <= 0 || params[[2]] <= 0) stop("Error: Need alpha, beta  > 0")
-      qbeta(p,params[[1]], params[[2]], ncp = noncent, lower.tail = lowtail, log.p = problog)
+      qbeta(p,params[[1]], params[[2]], ncp = ncp, lower.tail = lower.tail, log.p = log.p)
     }
   ),
   chisq = list(
@@ -42,17 +42,17 @@ visualize.distributions = list(
       var = 2*r
       c(mean, var)
     },
-    density = function(x, params, noncent = 0, problog = FALSE, ...) {
+    density = function(x, params, ncp = 0, log = FALSE, ...) {
       if(params[[1]] <= 0) stop("Error: Need degree freedom > 0")
-      dchisq(x, df = params[[1]], ncp = noncent, log = problog)
+      dchisq(x, df = params[[1]], ncp = ncp, log = log)
     },
-    probability = function(q, params, noncent = 0, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, ncp = 0, lower.tail = TRUE, log.p = FALSE, ...) {
       if(params[[1]] <= 0) stop("Error: Need degree freedom > 0")
-      pchisq(q, df = params[[1]], ncp = noncent, lower.tail = lowtail, log.p = problog)
+      pchisq(q, df = params[[1]], ncp = ncp, lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE){
+    quantile = function(p, params, ncp = 0, lower.tail = TRUE, log.p = FALSE){
       if(params[[1]] <= 0) stop("Error: Need degree freedom > 0")
-      pchisq(p, df = params[[1]], ncp = noncent, lower.tail = lowtail, log.p = problog)
+      pchisq(p, df = params[[1]], ncp = ncp, lower.tail = lower.tail, log.p = log.p)
     }
   ),
   
@@ -69,17 +69,17 @@ visualize.distributions = list(
       var = theta^2
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if(params[[1]] <= 0) stop("Error: Need theta > 0")
-      dexp(x, rate = params[[1]], log = problog)
+      dexp(x, rate = params[[1]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if(params[[1]] <= 0) stop("Error: Need theta > 0")
-      pexp(q, rate = params[[1]], lower.tail = lowtail, log.p = problog)
+      pexp(q, rate = params[[1]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE){
       if(params[[1]] <= 0) stop("Error: Need theta > 0")
-      qexp(p, rate = params[[1]], lower.tail = lowtail, log.p = problog)
+      qexp(p, rate = params[[1]], lower.tail = lower.tail, log.p = log.p)
     }
   ),
   
@@ -96,17 +96,17 @@ visualize.distributions = list(
       var = alpha*theta^2
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if(params[[1]] <= 0 || params[[2]] <= 0) stop("Error: Need alpha, theta > 0")
-      dgamma(x, shape = params[[1]], rate = params[[2]], log = problog)
+      dgamma(x, shape = params[[1]], rate = params[[2]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if(params[[1]] <= 0 || params[[2]] <= 0) stop("Error: Need alpha, theta > 0")
-      pgamma(q, shape = params[[1]], rate = params[[2]], lower.tail = lowtail, log.p = problog)
+      pgamma(q, shape = params[[1]], rate = params[[2]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
       if(params[[1]] <= 0 || params[[2]] <= 0) stop("Error: Need alpha, theta > 0")
-      qgamma(p, shape = params[[1]], rate = params[[2]], lower.tail = lowtail, log.p = problog)
+      qgamma(p, shape = params[[1]], rate = params[[2]], lower.tail = lower.tail, log.p = log.p)
     }
   ),
   
@@ -122,17 +122,17 @@ visualize.distributions = list(
       var = (params[[2]])^2
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if(params[[2]] < 0) stop("Error: Need standard deviation >= 0")
-      dnorm(x, mean = params[[1]], sd = params[[2]], log = problog)
+      dnorm(x, mean = params[[1]], sd = params[[2]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if(params[[2]] < 0) stop("Error: Need standard deviation >= 0")
-      pnorm(q, mean = params[[1]], sd = params[[2]], lower.tail = lowtail, log.p = problog)
+      pnorm(q, mean = params[[1]], sd = params[[2]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
       if(params[[2]] < 0) stop("Error: Need standard deviation >= 0")
-      qnorm(p, mean = params[[1]], sd = params[[2]], lower.tail = lowtail, log.p = problog)
+      qnorm(p, mean = params[[1]], sd = params[[2]], lower.tail = lower.tail, log.p = log.p)
     }
   ),
   
@@ -149,21 +149,177 @@ visualize.distributions = list(
       var = (b-a)^2/12
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if(params[[1]] > params[[2]]) stop("Error: a > b")
-      dunif(x, min = params[[1]], max = params[[2]], log = problog)
+      dunif(x, min = params[[1]], max = params[[2]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if(params[[1]] > params[[2]]) stop("Error: a > b")
-      punif(q, min = params[[1]], max = params[[2]], lower.tail = lowtail, log.p = problog)
+      punif(q, min = params[[1]], max = params[[2]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
       if(params[[1]] > params[[2]]) stop("Error: a > b")
-      qunif(p, min = params[[1]], max = params[[2]], lower.tail = lowtail, log.p = problog)
+      qunif(p, min = params[[1]], max = params[[2]], lower.tail = lower.tail, log.p = log.p)
+    }
+  ),
+#V1.5
+  cauchy = list(
+    type = "continuous",
+    name = "Cauchy Distribution",
+    variable = "c",
+    varsymbols = c("t","s"),
+    params = 2,
+    init  = function(params, ...) {
+      c("Undefined","Undefined")
+    },
+    density = function(x,params, lower.tail = TRUE, log = FALSE, ...){
+      if(params[[2]]<0) stop("Error: Scale is < 0!")
+      dcauchy(x,location = params[[1]], scale = params[[2]], log = log)
+    },
+    probability = function(q,params, lower.tail = TRUE, log.p = FALSE, ...){
+      if(params[[2]]<0) stop("Error: Scale is < 0!")
+      pcauchy(q,location = params[[1]], scale = params[[2]], lower.tail = lower.tail, log.p = log.p)
+    },
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
+      if(params[[2]]<0) stop("Error: Scale is < 0!")
+      qcauchy(p,location = params[[1]], scale = params[[2]], lower.tail = lower.tail, log.p = log.p)
+    }
+  ),
+  
+  lnorm = list(
+    type = "continuous",
+    name = "Log Normal Distribution",
+    variable = "log(z)",
+    varsymbols = c("\u03BC","\u03C3"),
+    params = 2,
+    init  = function(params, ...) {
+      if(params[[2]]<0) stop("Error: Standard Deviation is < 0!")
+      mean = exp(params[[1]]+((params[[2]]*params[[2]])/2))
+      var = (exp(params[[2]]*params[[2]])-1)*exp(2*params[[1]]+params[[2]]*params[[2]])
+      c(mean,var)
+    },
+    density = function(x,params, lower.tail = TRUE, log = FALSE, ...){
+      if(params[[2]]<0) stop("Error: Standard Deviation is < 0!")
+      dlnorm(x, meanlog = params[[1]], sdlog = params[[2]], log = log)
+    },
+    probability = function(q,params, lower.tail = TRUE, log.p = FALSE, ...){
+      if(params[[2]]<0) stop("Error: Standard Deviation is < 0!")
+      plnorm(q, meanlog = params[[1]], sdlog = params[[2]], lower.tail = lower.tail, log.p = log.p)
+    },
+    quantile = function(p,params, lower.tail = TRUE, log.p = FALSE, ...){
+      if(params[[2]]<0) stop("Error: Standard Deviation is < 0!")
+      qlnorm(p, meanlog = params[[1]], sdlog = params[[2]], lower.tail = lower.tail, log.p = log.p)
+    }
+    ),
+  
+  t = list(
+    type = "continuous",
+    name  = "Student t Distribution",
+    variable = "t",
+    varsymbols = c("df"),
+    params = 1,
+    init  = function(params,  ...) {
+      df = params[[1]]
+      if(params[[1]] < 0) stop("Error: Degrees of Freedom < 0 !!")
+      mean = 0
+      if(df > 2) var = df/(df-2)
+      else if(df <= 2 & df > 1) var = "+Inf"
+      else var = "Undefined"
+      c(mean, var)
+    },
+    density = function(x, params, ncp, log = FALSE, ...) {
+      if(params[[1]] < 0) stop("Error: Degrees of Freedom < 0 !!")
+      dt(x, df = params[[1]], ncp = ncp, log = log)
+    },
+    probability = function(q, params, ncp, lower.tail = TRUE, log.p = FALSE, ...) {
+      if(params[[1]] < 0) stop("Error: Degrees of Freedom < 0 !!")
+      pt(q, df = params[[1]], ncp = ncp, lower.tail = lower.tail, log.p = log.p)
+    },
+    quantile = function(p, params, ncp, lower.tail = TRUE, log.p = FALSE, ...){
+      if(params[[1]] < 0) stop("Error: Degrees of Freedom < 0 !!")
+      qt(p, df = params[[1]], ncp = ncp, lower.tail = lower.tail, log.p = log.p)
+    }
+  ),
+  
+  f = list(
+    type = "continuous",
+    name  = "F Distribution",
+    variable = "t",
+    varsymbols = c("df1,df2"),
+    params = 2,
+    init  = function(params,  ...) {
+      df1 = params[[1]]; df2 = params[[2]]
+      if(params[[1]] < 0 || params[[2]] < 0 ) stop("Error: Degrees of Freedom < 0 !!")
+      if(df2 > 2) mean = df2/(df2-2)
+      else mean = "Undefined"
+      if(df2 > 4) var = 2*df2*(df1+df2-2)/(df1*(df2-2)*(df2-2)*(df2-4))
+      else var = "Undefined"
+      c(mean, var)
+    },
+    density = function(x, params, ncp, log = FALSE, ...) {
+      if(params[[1]] < 0 || params[[2]] < 0 ) stop("Error: Degrees of Freedom < 0 !!")
+      df(x, df1 = params[[1]], df2 = params[[2]], ncp = ncp, log = log)
+    },
+    probability = function(q, params, ncp, lower.tail = TRUE, log.p = FALSE, ...) {
+      if(params[[1]] < 0 || params[[2]] < 0 ) stop("Error: Degrees of Freedom < 0 !!")
+      pf(q, df1 = params[[1]], df2 = params[[2]], ncp = ncp, lower.tail = lower.tail, log.p = log.p)
+    },
+    quantile = function(p, params, ncp, lower.tail = TRUE, log.p = FALSE, ...){
+      if(params[[1]] < 0 || params[[2]] < 0 ) stop("Error: Degrees of Freedom < 0 !!")
+      qf(p, df1 = params[[1]], df2 = params[[2]], ncp = ncp, lower.tail = lower.tail, log.p = log.p)
+    }
+  ),
+  
+  wilcox = list(
+    type = "continuous",
+    name  = "Wilcox Rank Sum Distribution",
+    variable = "w",
+    varsymbols = c("m","n"),
+    params = 2,
+    init  = function(params,  ...) {
+      m = params[[1]]; n = params[[2]]
+      mean =  m * n / 2
+      var =  m * n * (m + n + 1) / 12
+      c(mean, var)
+    },
+    density = function(x, params, log = FALSE, ...) {
+      dwilcox(x, m = params[[1]], n = params[[2]], log = log)
+    },
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
+      pwilcox(q, m = params[[1]], n = params[[2]], lower.tail = lower.tail, log.p = log.p)
+    },
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
+      qwilcox(p, m = params[[1]], n = params[[2]], lower.tail = lower.tail, log.p = log.p)
+    }
+  ),
+  
+  logis = list(
+    type = "continuous",
+    name  = "Logistic Distribution",
+    variable = "l",
+    varsymbols = c("loc","scale"),
+    params = 2,
+    init  = function(params,  ...) {
+      if(params[[2]] < 0 ) stop("Error: Scale < 0 !!")
+      mean =  params[[1]]
+      var =  1/3 * params[[2]] * params[[2]] * pi * pi
+      c(mean, var)
+    },
+    density = function(x, params, log = FALSE, ...) {
+      if(params[[2]] < 0 ) stop("Error: Scale < 0 !!")
+      dlogis(x, location = params[[1]], scale = params[[2]], log = log)
+    },
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
+      if(params[[2]] < 0 ) stop("Error: Scale < 0 !!")
+      plogis(q, location = params[[1]], scale = params[[2]], lower.tail = lower.tail, log.p = log.p)
+    },
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
+      if(params[[2]] < 0 ) stop("Error: Scale < 0 !!")
+      qlogis(p, location = params[[1]], scale = params[[2]], lower.tail = lower.tail, log.p = log.p)
     }
   ),
   #End Continuous Distributions
-  
+
   #Discrete Distributions
   binom = list(
     type = "discrete",
@@ -178,17 +334,17 @@ visualize.distributions = list(
       var = n*prob*(1-prob)
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if(params[[1]] < 0 || (params[[2]] > 1 || params[[2]] < 0)) stop("Error: n < 0 or p is not between 0 < p < 1")
-      dbinom(x, size = params[[1]], prob = params[[2]], log = problog)
+      dbinom(x, size = params[[1]], prob = params[[2]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if(params[[1]] < 0 || (params[[2]] > 1 || params[[2]] < 0)) stop("Error: n < 0 or p is not between 0 < p < 1")
-      pbinom(q, size = params[[1]], prob = params[[2]], lower.tail = lowtail, log.p = problog)
+      pbinom(q, size = params[[1]], prob = params[[2]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
       if(params[[1]] < 0 || (params[[2]] > 1 || params[[2]] < 0)) stop("Error: n < 0 or p is not between 0 < p < 1")
-      qbinom(p, size = params[[1]], prob = params[[2]], lower.tail = lowtail, log.p = problog)
+      qbinom(p, size = params[[1]], prob = params[[2]], lower.tail = lower.tail, log.p = log.p)
     }
   ),
   
@@ -205,17 +361,17 @@ visualize.distributions = list(
       var = (1-prob)/(prob^2)
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if( (params[[1]] > 1 || params[[1]] < 0) ) stop("Error: p is not between 0 < p < 1")
-      dgeom(x, prob = params[[1]], log = problog)
+      dgeom(x, prob = params[[1]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if( (params[[1]] > 1 || params[[1]] < 0) ) stop("Error: p is not between 0 < p < 1")
-      pgeom(q, prob = params[[1]], lower.tail = lowtail, log.p = problog)
+      pgeom(q, prob = params[[1]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
       if( (params[[1]] > 1 || params[[1]] < 0) ) stop("Error: p is not between 0 < p < 1")
-      qgeom(p, prob = params[[1]], lower.tail = lowtail, log.p = problog)
+      qgeom(p, prob = params[[1]], lower.tail = lower.tail, log.p = log.p)
     }
   ),
   
@@ -232,17 +388,17 @@ visualize.distributions = list(
       var = k*(m/(m+n))*(n/(m+n))*((m+n-k)/(m+n-1))
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if( params[[1]] < 0 || params[[2]] < 0 ) stop("Error: N_1 < 0 or N_2 < 0")
-      dhyper(x, m=params[[1]], n=params[[2]], k=params[[3]], log = problog)
+      dhyper(x, m=params[[1]], n=params[[2]], k=params[[3]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if( params[[1]] < 0 || params[[2]] < 0 ) stop("Error: N_1 < 0 or N_2 < 0")
-      phyper(q, m=params[[1]], n=params[[2]], k=params[[3]], lower.tail = lowtail, log.p = problog)
+      phyper(q, m=params[[1]], n=params[[2]], k=params[[3]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
       if( params[[1]] < 0 || params[[2]] < 0 ) stop("Error: N_1 < 0 or N_2 < 0")
-      qhyper(p, m=params[[1]], n=params[[2]], k=params[[3]], lower.tail = lowtail, log.p = problog)
+      qhyper(p, m=params[[1]], n=params[[2]], k=params[[3]], lower.tail = lower.tail, log.p = log.p)
     }
   ),
   
@@ -259,17 +415,17 @@ visualize.distributions = list(
       var = (size*(1-prob))/(prob^2)
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if( params[[1]] <= 0 || (params[[2]] > 1 || params[[2]] < 0) ) stop("Error: Size < 0 or p is not between 0 < p < 1")
-      dnbinom(x, size = params[[1]], prob = params[[2]], log = problog)
+      dnbinom(x, size = params[[1]], prob = params[[2]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if( params[[1]] <= 0 || (params[[2]] > 1 || params[[2]] < 0) ) stop("Error: Size < 0 or p is not between 0 < p < 1")
-      pnbinom(q, size = params[[1]], prob = params[[2]], lower.tail = lowtail, log.p = problog)
+      pnbinom(q, size = params[[1]], prob = params[[2]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
       if( params[[1]] <= 0 || (params[[2]] > 1 || params[[2]] < 0) ) stop("Error: Size < 0 or p is not between 0 < p < 1")
-      qnbinom(p, size = params[[1]], prob = params[[2]], lower.tail = lowtail, log.p = problog)
+      qnbinom(p, size = params[[1]], prob = params[[2]], lower.tail = lower.tail, log.p = log.p)
     }
   ),
   
@@ -286,17 +442,17 @@ visualize.distributions = list(
       var = lambda
       c(mean, var)
     },
-    density = function(x, params, problog = FALSE, ...) {
+    density = function(x, params, log = FALSE, ...) {
       if( params[[1]] <= 0 ) stop("Error: Lambda <= 0 ")
-      dpois(x, lambda = params[[1]], log = problog)
+      dpois(x, lambda = params[[1]], log = log)
     },
-    probability = function(q, params, lowtail = TRUE, problog = FALSE, ...) {
+    probability = function(q, params, lower.tail = TRUE, log.p = FALSE, ...) {
       if( params[[1]] <= 0 ) stop("Error: Lambda <= 0 ")
-      ppois(q, lambda = params[[1]], lower.tail = lowtail, log.p = problog)
+      ppois(q, lambda = params[[1]], lower.tail = lower.tail, log.p = log.p)
     },
-    quantile = function(p, params, lowtail = TRUE, problog = FALSE, ...){
+    quantile = function(p, params, lower.tail = TRUE, log.p = FALSE, ...){
       if( params[[1]] <= 0 ) stop("Error: Lambda <= 0 ")
-      qpois(p, lambda = params[[1]], lower.tail = lowtail, log.p = problog)
+      qpois(p, lambda = params[[1]], lower.tail = lower.tail, log.p = log.p)
     }
   )
   #end discrete

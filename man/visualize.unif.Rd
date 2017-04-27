@@ -29,7 +29,7 @@ James Balamuta
 }
 
 \seealso{
-	\code{\link{visualize.it}} , \code{\link{dgeom}}. 
+	\code{\link{visualize.it}} , \code{\link{dunif}}. 
 }
 \examples{
 #Evaluates lower tail.

@@ -29,20 +29,34 @@ All of visualize's supported distributions with their density, probability, and 
 
     init(params, ...):\tab Function that generates the mean and variance of a distribution.\cr
     
-    density(x,params, noncent, lowtail, problog, ...):\tab   	Function that provides the density value using vectors of the \cr
+    density(x, params, ncp = 0, lower.tail = TRUE, log = FALSE, ...):\tab   	Function that provides the density value using vectors of the \cr
     \tab quantiles from the distribution. \cr
     \tab This serves as a wrapper for \bold{d}\emph{distr_name}. \cr
     
-    probability(x,params, noncent, lowtail, problog, ...) \tab Function that provides the probability value \cr
+    probability(x, params, ncp = 0, lower.tail = TRUE, log.p = FALSE, ...) \tab Function that provides the probability value \cr
     \tab using vectors of quantiles from the distribution. \cr
     \tab This serves as a wrapper for \bold{p}\emph{distr_name}.\cr
     
-    quantile(,params, noncent, lowtail, problog, ...) \tab Function that provides the quantile value \cr
+    quantile(x, params, ncp = 0, lower.tail = TRUE, log.p = FALSE, ...) \tab Function that provides the quantile value \cr
     \tab using vectors of probabilities from the distribution. \cr
     \tab This serves as a wrapper for \bold{q}\emph{distr_name}.\cr
   
 	}
 
+The distributions currently listed are:
+  \tabular{llll}{
+    Distribution \tab r Name \tab Distribution \tab r Name \cr
+  Beta \tab beta \tab Lognormal \tab lnorm\cr
+  Binomial \tab binom \tab Negative Binomial \tab nbinom\cr
+  Cauchy \tab cauchy \tab Normal \tab norm\cr
+  Chisquare \tab chisq \tab Poisson \tab pois\cr
+  Exponential \tab exp \tab Student t \tab t\cr
+  F \tab f \tab Uniform \tab unif\cr
+  Gamma \tab gamma \tab Tukey \tab tukey\cr
+  Geometric \tab geom \tab Weibull \tab weib\cr
+  Hypergeometric \tab hyper \tab Wilcoxon \tab wilcox\cr
+  Logistic \tab logis\tab \tab \cr
+}
 }
 \author{
 James Balamuta

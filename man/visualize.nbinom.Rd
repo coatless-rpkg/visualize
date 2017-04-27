@@ -7,14 +7,14 @@ Visualize Negative Binomial Distribution
 Generates a plot of the Negative Binomial distribution with user specified parameters.
 }
 \usage{
-visualize.nbinom(stat = 1, n = 6, prob = 0.5, section = "lower")
+visualize.nbinom(stat = 1, size = 6, prob = 0.5, section = "lower")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{stat}{
    a statistic to obtain the probability from. When using the "bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.
 }
-  \item{n}{
+  \item{size}{
 	number of objects.
 }
   \item{prob}{
@@ -35,12 +35,12 @@ James Balamuta
 }
 \examples{
 #Evaluates lower tail.
-visualize.nbinom(stat = 1, n = 5, prob = 0.5, section = "lower") 
+visualize.nbinom(stat = 1, size = 5, prob = 0.5, section = "lower") 
 
 #Evaluates bounded region.
-visualize.nbinom(stat = c(1,3), n = 10, prob = 0.35, section = "bounded")
+visualize.nbinom(stat = c(1,3), size = 10, prob = 0.35, section = "bounded")
 
 #Evaluates upper tail.
-visualize.nbinom(stat = 1, n = 5, prob = 0.5, section = "upper")
+visualize.nbinom(stat = 1, size = 5, prob = 0.5, section = "upper")
 }
 \keyword{visualize}

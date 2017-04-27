@@ -9,7 +9,6 @@ Generates a plot of the Beta distribution with user specified parameters.
 \usage{
 visualize.beta(stat = 1, alpha = 3, beta = 2, section = "lower")
 }
-
 \arguments{
   \item{stat}{
 a statistic to obtain the probability from. When using the "bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.

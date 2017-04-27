@@ -1,46 +1,69 @@
 visualize.discrete <-
 function(dist, stat = c(0,1), params, section = "lower"){
-  
   stat = round(stat)
-  if(length(stat)>1 & section != "bounded"){ section = "bounded"; cat("Supplied stat > 1, reverting to bounded.")}
   
   #Perform the approriate scales to center the distribution.
   mean = dist$init(params)[1];var = dist$init(params)[2]
-  lb = max(0,round(-3*sqrt(var) + mean)); ub = round(3*sqrt(var) + mean) #axis length
+  lower_bound = max(0,round(-3*sqrt(var) + mean));
+  upper_bound = round(3*sqrt(var) + mean) #axis length
+  
+  x = seq(lower_bound,upper_bound,by=1)
+  y = dist$density(x,params)
+  ymax = max(y)+0.05
 
   graphmain = paste(dist$name," \n")
   for(i in 1:length(params)){
     graphmain = paste(graphmain, dist$varsymbols[i]," = ",params[[i]], " ")
   }
-
-  #Generate initial pmf graph
-  x = seq(lb,ub,by=1)
-  y = dist$density(x,params)
-  plot(c(lb,ub),c(0,max(y)), type="n", xlab="Values", ylab="Probability", main=graphmain)
-  lines(x, y, type = "h", col="ORANGE")
-  abline(h=0,col="RED")
   
   #evaluate based on sections.
   if(section == "lower"){
-    x=seq(lb,stat[[1]],1)
-    y=dist$density(x,params)
-    lines(x,y,type="h",col="BLUE")
+    if(stat >= lower_bound) region = length(seq(lower_bound,stat[[1]],1))
+    else region = 0
+    #Build lower tail shade if stat is within bounds.
+    i = region
+    j = abs(region - upper_bound)+1
+    
+    barplot(y, ylim = c(0, ymax), col=c(rep("blue",i),rep("white",j)), axes = FALSE)
+    barplot(y, ylim = c(0, ymax), xlab = "Values", ylab = "Probability", names.arg = x, main=graphmain, col=c(rep("orange",i),rep("white",j)), density=c(rep(3,i),rep(0,j)), add = TRUE)
+    
     prob = dist$probability(stat,params)
     subheader = paste("P( ",dist$variable," \u2264 ",stat, ") = ", signif(prob, digits=3))
   }
   else if(section == "bounded"){
     if(length(stat)!= 2) stop("Incorrect Number of Stat Parameters Supplied for Bounded Condition")
-    upper = stat[[2]]; lower = stat[[1]]
-    x = seq(lower,upper,by=1)
-    y = dist$density(x,params)
-    lines(x,y,type="h",col="BLUE")
-    prob = dist$probability(upper,params) - dist$probability(lower-1,params)
-    subheader = paste("P(",lower," \u2264 ",dist$variable," \u2264 ",upper,") =", signif(prob, digits=3))
+    disupper = upper = stat[[2]]; dislower = lower = stat[[1]]
+    
+    #Map the bounds
+    if(upper > upper_bound){
+      upper = upper_bound
+      if(lower > upper_bound) lower = upper_bound
+    }
+    else if(lower < lower_bound){
+      lower = lower_bound
+      if(upper < lower_bound) upper = lower_bound
+    }
+    
+    #Build the grid.
+    i = length(seq(lower_bound,lower,by=1)) - 1
+    j = length(seq(lower,upper,by=1)) - 1*(dislower < lower_bound & disupper < lower_bound || disupper > upper_bound & dislower > upper_bound)
+    k = length(seq(upper,upper_bound,by=1)) - 1
+    
+    #plot the distribution
+    barplot(y, ylim = c(0, ymax), col=c(rep("white",i),rep("blue",j),rep("white",k)), axes = FALSE)
+    barplot(y, ylim = c(0, ymax), xlab = "Values", ylab = "Probability", names.arg = x, main=graphmain, col=c(rep("white",i),rep("orange",j), rep("white",k)), density=c(rep(0,i),rep(3,j),rep(0,k)), add = TRUE)
+    
+    #Generate subtitle
+    prob = dist$probability(disupper,params) - dist$probability(dislower-1,params)
+    subheader = paste("P(",dislower," \u2264 ",dist$variable," \u2264 ",disupper,") =", signif(prob, digits=3))
   }
   else if(section == "upper"){
-    x=seq(stat[[1]],ub,by=1)
-    y=dist$density(x,params)
-    lines(x,y,type="h",col="BLUE")
+    if(stat <= upper_bound) region = length(seq(stat[[1]],upper_bound,1))
+    else region = 0
+    i = abs(region -(upper_bound-lower_bound+1)) #region-span of graph
+    j = region
+    barplot(y, ylim = c(0, ymax), col=c(rep("white",i),rep("blue",j)), axes = FALSE)
+    barplot(y, ylim = c(0, ymax), xlab = "Values", ylab = "Probability", names.arg = x, main=graphmain, col=c(rep("white",i),rep("orange",j)), density=c(rep(0,i),rep(3,j)), add = TRUE)
     prob = 1-dist$probability(stat-1,params)
     subheader = paste("P( ",dist$variable," \u2265 ", stat, " ) =", signif(prob, digits=3))
   }

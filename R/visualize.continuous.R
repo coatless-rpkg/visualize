@@ -1,11 +1,17 @@
 visualize.continuous <-
-function(dist, stat = c(0,1), params, section = "lower"){
-  if(length(stat)>1 & section != "bounded"){ section = "bounded"; cat("Supplied stat > 1, reverting to bounded.")}
- 
+function(dist, stat = c(0,1), params, section = "lower"){  
   #Perform the approriate scales to center the distribution.
-  mean = dist$init(params)[1];var = dist$init(params)[2]
-  lb = -3.5*sqrt(var) + mean; ub = 3.5*sqrt(var) + mean #axis length
+  mean = dist$init(params)[[1]];var = dist$init(params)[[2]]
   
+  #Do we have a mean and variance to work with?
+  if(is.numeric(var)) {
+    lb = -3.5*sqrt(var) + mean; ub = 3.5*sqrt(var) + mean
+    mean = signif(mean, digits=3); var = signif(var, digits=3)
+  } #axis length
+  else {
+    lb = -4*params[[2]] + params[[1]]; ub = 4*params[[2]] + params[[1]]
+  }
+ 
   #Special scaling case.
   if(dist$name == "Exponential Distribution")
   {
@@ -23,7 +29,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
   
   #Generate the initial PDF and plot it.
   x = seq(lb,ub,length=500)
-  y=dist$density(x,params)
+  y = dist$density(x,params)
   plot(x,y, lwd=2, col="ORANGE", type="l", xlab="X Values", ylab="Probability Density", main=graphmain, axes=TRUE)
 
   #Evaluate based on section type. 
@@ -54,5 +60,5 @@ function(dist, stat = c(0,1), params, section = "lower"){
     stop("Section not specified. Please choose either lower, bounded, or upper.")
   }
   mtext(subheader,3)
-  title(sub = paste("\u03BC = ", signif(mean, digits=3),", \u03C3\u00B2 = ",signif(var, digits=3)))
+  title(sub = paste("\u03BC = ", mean,", \u03C3\u00B2 = ", var))
 }
