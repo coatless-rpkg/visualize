@@ -1,11 +1,17 @@
 Package: visualize
 Type: Package
-Title: Graph Probability Distributions with User Supplied Parameters
-        and Stats.
-Version: 4.2
-Date: 2013-08-03
-Author: James Balamuta
-Maintainer: James Balamuta <james.balamuta@gmail.com>
-Description: Graphs the pdf or pmf and highlights what area or probability is present in user defined locations. Visualize is able to provide lower tail, bounded, upper tail, and two tail calculations. Supports strict and equal to inequalities.  Also provided on the graph is the mean and variance of the distribution. 
-License: MIT License
-URL: http://thecoatlessprofessor.com
+Title: Graph Probability Distributions with User Supplied Parameters and Statistics
+Version: 4.3
+Date: 2017-04-27
+Depends: R (>= 3.0.0)
+Authors@R: c(person("James", "Balamuta", role = c("aut", "cph", "cre"), 
+	                  email = "james.balamuta@gmail.com"))
+Description: Graphs the pdf or pmf and highlights what area or probability is
+    present in user defined locations. Visualize is able to provide lower tail,
+    bounded, upper tail, and two tail calculations. Supports strict and equal
+    to inequalities.  Also provided on the graph is the mean and variance of
+    the distribution. 
+License: MIT + file LICENSE
+URL: https://github.com/coatless/visualize, http://thecoatlessprofessor.com/projects/visualize/
+BugReports: https://github.com/coatless/visualize/issues
+RoxygenNote: 6.0.1
