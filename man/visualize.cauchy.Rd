@@ -21,7 +21,7 @@ a statistic to obtain the probability from. When using the "bounded" condition, 
   scale parameter
 }
   \item{section}{
-  Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}.  
 }
 }
 \value{

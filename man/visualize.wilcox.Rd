@@ -20,7 +20,7 @@ Sample size from group 1.
 Sample size from group 2.
 }
   \item{section}{
-  Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
 }
 }
 

@@ -21,15 +21,13 @@ visualize.nbinom(stat = 1, size = 6, prob = 0.5, section = "lower", strict = FAL
 	probability of picking object.	
 }
   \item{section}{
-	Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
 }
   \item{strict}{
-  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires either values = 0 or = FALSE for equal to OR values =1 or =TRUE for strict. For bounded condition use: \code{strict=c(0,1)} or \code{strict=c(FALSE,TRUE)}. 
+  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. The \code{strict=} argument requires either values = 0 or = FALSE for equal to OR values = 1 or = TRUE for strict. For bounded condition use: \code{strict=c(LOWER_STRICT_VALUE, UPPER_STRICT_VALUE)}. 
 }
 }
-\details{
-	Note: This package only evaluates on inequalities that are not strict - i.e. (greater than or equal to) or (less than or equal to).
-}
+
 \author{
 James Balamuta
 }
@@ -41,7 +39,8 @@ James Balamuta
 visualize.nbinom(stat = 1, size = 5, prob = 0.5, section = "lower", strict = 0) 
 
 #Evaluates bounded region.
-visualize.nbinom(stat = c(1,3), size = 10, prob = 0.35, section = "bounded", strict = c(TRUE, FALSE))
+visualize.nbinom(stat = c(1,3), size = 10, prob = 0.35, 
+		section = "bounded", strict = c(TRUE, FALSE))
 
 #Evaluates upper tail.
 visualize.nbinom(stat = 1, size = 5, prob = 0.5, section = "upper", strict = 1)

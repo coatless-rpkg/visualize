@@ -21,7 +21,7 @@ First Degrees of Freedom
 Second Degrees of Freedom
 }
   \item{section}{
-  Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
 }
 }
 \value{

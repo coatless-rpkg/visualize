@@ -19,7 +19,7 @@ function(dist, stat = c(0,1), params, section = "lower", strict){
     graphmain = paste(graphmain, dist$varsymbols[i]," = ",params[[i]], " ")
   }
   
-  #evaluate based on sections.
+  #evaluate based on sections, rewrite v5?
   if(section == "lower"){
     if(stat >= lower_bound) region = stat[[1]]-lower_bound+1
     else region = 0
@@ -87,7 +87,56 @@ function(dist, stat = c(0,1), params, section = "lower", strict){
     ineqsym = if(strict[[1]]==0){" \u2265 "}else{" > "}
     subheader = paste("P( ",dist$variable, ineqsym, stat, " ) =", signif(prob, digits=3))
   }
-  else{ stop("Section not specified. Please choose either lower, bounded, or upper.") }
+  else if(section == "tails") #implemented in v4.0
+  {
+    #set separate stats
+    lower_stat = stat[[1]]; upper_stat = stat[[2]]
+    
+    #set strict values based on 1/0s or true/falses
+    if(strict[[1]]) lower_strict = 1
+    else lower_strict = 0
+    if(strict[[2]]) upper_strict = 1
+    else upper_strict = 0
+    
+    #determine the span
+    span = upper_bound-lower_bound + 1
+    
+    #handle the case specific errors
+    if(lower_stat >= lower_bound) lower_region = lower_stat - lower_bound + 1 - 1*(lower_strict==1)
+    else if(lower_stat >= upper_bound) lower_region = span
+    else lower_region = 0 #lower_stat < lower_bound
+    
+    if(upper_stat <= upper_bound & upper_stat >= lower_bound) 
+          upper_region = upper_stat-lower_bound+1-1*(upper_strict==1)
+    else upper_region = span #upper_stat < lower_bound
+    
+    #builds counts
+    i = lower_region
+    j = upper_region-i-1+2*(upper_strict==1)
+    k = span-i-j
+
+    #build graphs
+    barplot(y, ylim = c(0, ymax), col=c(rep("blue",i),rep("white",j),rep("blue",k)), axes = FALSE)
+    barplot(y, ylim = c(0, ymax), xlab = "Values", ylab = "Probability", names.arg = x, main=graphmain,
+            col=c(rep("orange",i),rep("white",j), rep("orange",k)), density=c(rep(3,i),rep(0,j),rep(3,k)),
+            add = TRUE)
+    
+    #handle legend information
+    prob = 1-dist$probability(upper_stat-1*(!upper_strict),params)+dist$probability(lower_stat-1*(lower_strict),params)
+    upper_ineqsym = if(!upper_strict){" \u2265 "}else{" > "}
+    lower_ineqsym = if(!lower_strict){" \u2264 "}else{" < "}
+    subheader = paste("P( ",dist$variable, lower_ineqsym ,lower_stat, " ) + P( ",dist$variable, upper_ineqsym, upper_stat, " ) =", signif(prob, digits=3))
+  }
+  else{ stop("Section not specified. Please choose either lower, bounded, tails, or upper.") }
+  
+  if(length(stat)==1){
+    axis(1,at=i+1,labels=bquote(eta[.(stat[[1]])]), line=.69)
+  }
+  else{
+    axis(1,at=i+1,labels=bquote(eta[.(stat[[1]])]), line=.69)
+    axis(1,at=i+j+2,labels=bquote(eta[.(stat[[2]])]), line=.69)
+  }
+  
   mtext(subheader,3)
   title(sub = paste("\u03BC = ", signif(mean, digits=3),", \u03C3\u00B2 = ",signif(var, digits=3)))
 }

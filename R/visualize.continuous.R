@@ -3,6 +3,10 @@ function(dist, stat = c(0,1), params, section = "lower"){
   #Perform the approriate scales to center the distribution.
   mean = dist$init(params)[[1]];var = dist$init(params)[[2]]
   
+  #maybe open these up in the next release?
+  line_width = 3
+  line_style = 2
+  
   #Do we have a mean and variance to work with?
   if(is.numeric(var)) {
     lb = -3.5*sqrt(var) + mean; ub = 3.5*sqrt(var) + mean
@@ -30,34 +34,68 @@ function(dist, stat = c(0,1), params, section = "lower"){
   #Generate the initial PDF and plot it.
   x = seq(lb,ub,length=500)
   y = dist$density(x,params)
-  plot(x,y, lwd=2, col="ORANGE", type="l", xlab="X Values", ylab="Probability Density", main=graphmain, axes=TRUE)
-
+  plot(x,y, lwd=2, col="black", type="l", xlab=paste(dist$variable,"- Statistic"), ylab="Probability Density", main=graphmain, axes=TRUE)
+  
   #Evaluate based on section type. 
   if(section == "lower"){
-    x=seq(lb,stat,length=300)
-    y=dist$density(x,params)
-    polygon(c(lb,x,stat),c(0,y,0),col="BLUE")
+    path = seq(lb,stat,.01)
+    polygon(c(rep(stat,2),rev(path)),
+            c(dist$density(seq(lb,stat,len=2),params),dist$density(rev(path),params)),
+            col="Blue", lty=line_style, lwd=line_width, border="Orange")    
     prob = dist$probability(stat,params)
     subheader = paste("P( ",dist$variable," \u2264 ",stat, ") = ", signif(prob, digits=3))
   }
   else if(section == "bounded"){
-    if(length(stat)!= 2) stop("Incorrect Number of Stat Parameters Supplied for Bounded Condition")
-    ub = stat[[2]]; lb = stat[[1]]
-    i = (x >= lb & x <= ub)
-    lines(x, y)
-    polygon(c(lb,x[i],ub), c(0,y[i],0), col="BLUE") 
-    prob = dist$probability(ub,params) - dist$probability(lb,params)
-    subheader = paste("P(",lb," \u2264 ",dist$variable," \u2264 ",ub,") =", signif(prob, digits=3))
+    start = stat[[1]]; end = stat[[2]];
+    path=seq(start,end,.01)
+    polygon(c(start,path,end),
+            c(0,dist$density(path,params),0),
+            col="Blue", lty=line_style, lwd=line_width, border="Orange");   
+    prob = dist$probability(end,params) - dist$probability(start,params)
+    subheader = paste("P(",start," \u2264 ",dist$variable," \u2264 ",end,") =", signif(prob, digits=3))
   }
-  else if(section == "upper"){
-    x=seq(stat,ub,length=500)
-    y=dist$density(x,params)
-    polygon(c(stat,x,ub),c(0,y,0),col="BLUE")
+  else if(section == "upper"){    
+    path = seq(stat,ub,.01)
+    polygon(c(rep(stat,2),rev(path)),
+            c(dist$density(seq(stat,ub,len=2),params),dist$density(rev(path),params)),
+            col="Blue", lty=line_style, lwd=line_width, border="Orange")  
     prob = 1-dist$probability(stat,params)
     subheader = paste("P( ",dist$variable," \u2265 ", stat, " ) =", signif(prob, digits=3))
   }
+  else if(section == "tails"){
+    lower_stat = stat[[1]];upper_stat=stat[[2]];
+    #make sure we have the right stats
+    if(lower_stat>upper_stat){
+      hold = lower_stat
+      lower_stat = upper_stat
+      upper_stat = hold
+    }
+    
+    #generate lower area
+    lower_path = seq(lb,lower_stat,.01)
+    polygon(c(rep(lower_stat,2),rev(lower_path)),
+            c(dist$density(seq(lb,lower_stat,len=2),params),dist$density(rev(lower_path),params)),
+            col="Blue", lty=line_style, lwd=line_width, border="Orange")  
+    
+    #generate upper area
+    upper_path = seq(upper_stat,ub,.01)
+    polygon(c(rep(upper_stat,2),rev(upper_path)),
+            c(dist$density(seq(upper_stat,ub,len=2),params),dist$density(rev(upper_path),params)),
+            col="Blue", lty=line_style, lwd=line_width, border="Orange")
+    
+    prob = 1-dist$probability(upper_stat,params)+dist$probability(lower_stat,params)
+    subheader = bquote(P(.(dist$variable) <= .(lower_stat))+P(.(dist$variable) >= .(upper_stat)) == .(signif(prob, digits=3)))
+  }
   else{
-    stop("Section not specified. Please choose either lower, bounded, or upper.")
+    stop("Section not specified. Please choose either lower, bounded, tails, or upper.")
+  }
+  
+  if(length(stat)==1){
+    axis(1,at=stat[[1]],labels=bquote(eta[.(stat[[1]])]), line=.69)
+  }
+  else{
+    axis(1,at=stat[[1]],labels=bquote(eta[.(stat[[1]])]), line=.69)
+    axis(1,at=stat[[2]],labels=bquote(eta[.(stat[[2]])]), line=.69)
   }
   mtext(subheader,3)
   title(sub = paste("\u03BC = ", mean,", \u03C3\u00B2 = ", var))

@@ -19,15 +19,11 @@ visualize.geom(stat = 1, prob = 0.3, section = "lower", strict = FALSE)
 	probability of picking object.	
 }
   \item{section}{
-	Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
 }
   \item{strict}{
-  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires either values = 0 or =FALSE for equal to OR values =1 or =TRUE for strict. For bounded condition use: \code{strict=c(0,1)} or \code{strict=c(FALSE,TRUE)}. 
+  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. The \code{strict=} argument requires either values = 0 or = FALSE for equal to OR values = 1 or = TRUE for strict. For bounded condition use: \code{strict=c(LOWER_STRICT_VALUE, UPPER_STRICT_VALUE)}. 
 }
-}
-
-\details{
-	Note: This package only evaluates on inequalities that are not strict - i.e. (greater than or equal to) or (less than or equal to).
 }
 
 \author{

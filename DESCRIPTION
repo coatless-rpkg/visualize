@@ -2,13 +2,13 @@ Package: visualize
 Type: Package
 Title: Graph Probability Distributions with User Supplied Parameters
         and Stats.
-Version: 3.0
-Date: 2013-02-15
+Version: 4.1
+Date: 2013-05-21
 Author: James Balamuta
 Maintainer: James Balamuta <james.balamuta@gmail.com>
 Description: Graphs the pdf or pmf and highlights what area or
         probability is present in user defined locations. Visualize is
-        able to provide lower tail, bounded, and upper tail
+        able to provide lower tail, bounded, upper tail, and two tail
         calculations. Supports strict and equal to inequalities.  Also
         provided on the graph is the mean and variance of the
         distribution.

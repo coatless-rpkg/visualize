@@ -21,7 +21,7 @@ visualize.chisq(stat = 1, df = 3, section = "lower")
 	degrees of freedom of Chi-squared distribution.
 }
   \item{section}{
-Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}.  
 }
 }
 

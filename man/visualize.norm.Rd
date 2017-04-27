@@ -21,7 +21,7 @@ visualize.norm(stat = 1, mu = 0, sd = 1, section = "lower")
   	standard deviation of the Normal Distribution.
 }
   \item{section}{
-	Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
 }
 }
 \seealso{

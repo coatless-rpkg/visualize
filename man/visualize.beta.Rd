@@ -20,7 +20,7 @@ a statistic to obtain the probability from. When using the "bounded" condition, 
 	\code{beta} is considered to be \emph{shape2} by R's implementation of the beta distribution. \code{beta} must be greater than 0.
 }
   \item{section}{
-Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
 }
 }
 
