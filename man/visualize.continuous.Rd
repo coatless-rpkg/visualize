@@ -1,6 +1,5 @@
 \name{visualize.continuous}
 \alias{visualize.continuous}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Graphing function for Continuous Distributions.
 }
@@ -10,7 +9,6 @@ Handles how continuous distributions are graphed. Users should not use this func
 \usage{
 visualize.continuous(dist, stat = c(0, 1), params, section = "lower")
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dist}{
 	contains the distribution from \code{link{visualize.distributions}}.
@@ -30,7 +28,8 @@ James Balamuta
 }
 
 \seealso{
-\code{\link{visualize.it}}, \code{\link{visualize.beta}}, \code{\link{visualize.chisq}}, \code{\link{visualize.exp}}, \code{\link{visualize.gamma}},  \code{\link{visualize.norm}}, \code{\link{visualize.unif}}.
+\code{\link{visualize.it}}, \code{\link{visualize.beta}}, \code{\link{visualize.chisq}}, \code{\link{visualize.exp}}, \code{\link{visualize.gamma}},  \code{\link{visualize.norm}}, \code{\link{visualize.unif}}, \code{\link{visualize.cauchy}}*, \code{\link{visualize.f}}*, \code{\link{visualize.lnorm}}*, \code{\link{visualize.t}}*, \code{\link{visualize.wilcox}}*, \code{\link{visualize.logis}}*. \cr
+* = added in v2.0. 
 }
 \examples{
 #Function does not have dist look up, must go through visualize.it

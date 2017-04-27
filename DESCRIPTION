@@ -2,8 +2,8 @@ Package: visualize
 Type: Package
 Title: Graph Probability Distributions with User Supplied Parameters
         and Stats.
-Version: 2.1
-Date: 2012-12-30
+Version: 2.2
+Date: 2013-01-15
 Author: James Balamuta
 Maintainer: James Balamuta <james.balamuta@gmail.com>
 Description: Graphs the pdf or pmf and highlights what area or

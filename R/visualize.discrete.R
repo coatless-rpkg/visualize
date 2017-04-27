@@ -33,7 +33,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
   else if(section == "bounded"){
     if(length(stat)!= 2) stop("Incorrect Number of Stat Parameters Supplied for Bounded Condition")
     disupper = upper = stat[[2]]; dislower = lower = stat[[1]]
-    
+    print(upper);print(lower);
     #Map the bounds
     if(upper > upper_bound){
       upper = upper_bound
@@ -58,9 +58,11 @@ function(dist, stat = c(0,1), params, section = "lower"){
     subheader = paste("P(",dislower," \u2264 ",dist$variable," \u2264 ",disupper,") =", signif(prob, digits=3))
   }
   else if(section == "upper"){
-    if(stat <= upper_bound) region = length(seq(stat[[1]],upper_bound,1))
+    span = upper_bound-lower_bound+1
+    if(stat <= upper_bound & stat > lower_bound) region = length(seq(stat[[1]],upper_bound,1))
+    else if(stat <= lower_bound) region = span
     else region = 0
-    i = abs(region -(upper_bound-lower_bound+1)) #region-span of graph
+    i = abs(region - (upper_bound-lower_bound+1)) #region-span of graph
     j = region
     barplot(y, ylim = c(0, ymax), col=c(rep("white",i),rep("blue",j)), axes = FALSE)
     barplot(y, ylim = c(0, ymax), xlab = "Values", ylab = "Probability", names.arg = x, main=graphmain, col=c(rep("white",i),rep("orange",j)), density=c(rep(0,i),rep(3,j)), add = TRUE)

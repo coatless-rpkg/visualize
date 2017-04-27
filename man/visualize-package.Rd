@@ -16,14 +16,29 @@ Version: \tab 2.0\cr
 Date: \tab 2012-12-30\cr
 License: \tab MIT License\cr
 }
-
 }
 \author{
 James Balamuta
 
 Maintainer: James Balamuta <james.balamuta@gmail.com>
 }
+\note{
+Update Notes: \cr
+v2.1 \cr 
+* Corrects minor graphing labels. \cr
+* Revised error handling.\cr
 
+v2.0 - "Seeing is Believing"  \cr
+* New Continuous Distributions: Cauchy, F, Log Normal, Logistic, T, and Wilcox. \cr
+* New Bar graph rendering for discrete probability distributions. \cr
+* Rewritten Distribution Wrapper\cr
+
+v1.0 - "Seeing is Magic"  \cr
+* Supported Continuous Distributions: Chi-squared, beta, gamma, exponential, uniform, and normal. \cr
+* Supported Discrete Distributions: Geometric, binomial, poisson, hypergeometric, and negative binomial. \cr
+* Graph the PDF or PMF of a probability function and determine the probability enclosed. \cr
+* See characteristics of the distribution requested (Parameters, Mean, and Variance). 
+}
 \keyword{ package }
 \examples{
 ##visualize.it acts as the general wrapper.
