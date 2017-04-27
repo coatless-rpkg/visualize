@@ -7,7 +7,7 @@ Graphing function for Discrete Distributions.
 Handles how discrete distributions are graphed. Users should not use this function. Instead, users should use \code{link{visualize.it}}.
 }
 \usage{
-visualize.discrete(dist, stat = c(0, 1), params, section = "lower")
+visualize.discrete(dist, stat = c(0, 1), params, section = "lower", strict)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -23,6 +23,9 @@ A list that must contain the necessary parameters for each distribution. For exa
   \item{section}{
 	Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
 }
+  \item{strict}{
+  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires either values = 0 or =FALSE for equal to OR values =1 or =TRUE for strict. For bounded condition use: \code{strict=c(0,1)} or \code{strict=c(FALSE,TRUE)}. 
+}
 }
 \author{
 James Balamuta
@@ -33,7 +36,7 @@ James Balamuta
 }
 \examples{
 #Function does not have dist look up, must go through visualize.it
-visualize.it(dist='geom', stat = c(2,4), params = list(prob = .75), section = "bounded")
+visualize.it(dist='geom', stat = c(2,4), params = list(prob = .75), section = "bounded", strict = c(0,1))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -7,7 +7,7 @@ Visualize's Processing Function
 Acts as a director of traffic and first line of error handling regarding submitted visualization requests. This function should only be used by advanced users.
 }
 \usage{
-visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd = 1), section = "lower")
+visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd = 1), section = "lower", strict = c(0,1))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,6 +22,9 @@ visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd = 1), secti
 }
   \item{section}{
 	Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+}
+  \item{strict}{
+  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires either values = 0 or =FALSE for strict OR values =1 or =TRUE for equal to. For bounded condition use: \code{strict=c(0,1)} or \code{strict=c(FALSE,TRUE)}. 
 }
 }
 

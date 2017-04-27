@@ -3,17 +3,17 @@
 \alias{visualize}
 \docType{package}
 \title{
-Graphs the pdf or pmf and highlights what area or probability is present in defined locations.
+Graph Probability Distributions with User Supplied Parameters and Stats.
 }
 \description{
-Graphs the pdf or pmf and highlights what area or probability is present in defined locations. Supports lower, bounded, and upper calculations. Also provided on the graph is the mean and variance of the distribution. 
+Graphs the pdf or pmf and highlights what area or probability is present in user defined locations. Visualize is able to provide lower tail, bounded, and upper tail calculations. Supports strict and equal to inequalities.  Also provided on the graph is the mean and variance of the distribution. 
 }
 \details{
 \tabular{ll}{
 Package: \tab visualize\cr
 Type: \tab Package\cr
-Version: \tab 2.0\cr
-Date: \tab 2012-12-30\cr
+Version: \tab 3.0\cr
+Date: \tab 2013-02-15\cr
 License: \tab MIT License\cr
 }
 }
@@ -24,13 +24,20 @@ Maintainer: James Balamuta <james.balamuta@gmail.com>
 }
 \note{
 Update Notes: \cr
-v2.1 \cr 
+v3.0 - "Seeing is Strict" \cr
+* New feature: Evaluate probabilities with strict inequalities! \cr
+* Rewrote sections to increase efficiency and reliability. \cr
+
+v2.2 - Hotfix - "Seeing is Correct" \cr
+* Corrects rendering issue with supplied stat not meeting certain criteria. \cr
+
+v2.1 - Hotfix - "Seeing is Off" \cr 
 * Corrects minor graphing labels. \cr
 * Revised error handling.\cr
 
 v2.0 - "Seeing is Believing"  \cr
 * New Continuous Distributions: Cauchy, F, Log Normal, Logistic, T, and Wilcox. \cr
-* New Bar graph rendering for discrete probability distributions. \cr
+* New feature: Bar graph rendering for discrete probability distributions. \cr
 * Rewritten Distribution Wrapper\cr
 
 v1.0 - "Seeing is Magic"  \cr
@@ -44,8 +51,8 @@ v1.0 - "Seeing is Magic"  \cr
 ##visualize.it acts as the general wrapper.
 ##For guided application of visualize, see the visualize.distr_name list.
 #Binomial distribution evaluated at lower tail.
-visualize.it('binom', stat = 2, params = list(n=4,p=.5), section ="lower")
-visualize.binom(stat = 2, size = 4, prob =.5, section ="lower")
+visualize.it(dist = 'binom', stat = 2, params = list(size = 4,prob = .5), section ="lower", strict = TRUE)
+visualize.binom(stat = 2, size = 4, prob =.5, section ="lower", strict = TRUE)
 
 #Set to shade inbetween a bounded region.
 visualize.it(dist = 'norm', stat = c(-1,1), list(mu=0,sd=1), section="bounded")
