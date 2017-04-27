@@ -244,15 +244,15 @@ visualize.distributions = list(
   f = list(
     type = "continuous",
     name  = "F Distribution",
-    variable = "t",
-    varsymbols = c("df1,df2"),
+    variable = "F",
+    varsymbols = c("df1","df2"),
     params = 2,
     init  = function(params,  ...) {
       df1 = params[[1]]; df2 = params[[2]]
       if(params[[1]] < 0 || params[[2]] < 0 ) stop("Error: Degrees of Freedom < 0 !!")
-      if(df2 > 2) mean = df2/(df2-2)
-      else mean = "Undefined"
-      if(df2 > 4) var = 2*df2*(df1+df2-2)/(df1*(df2-2)*(df2-2)*(df2-4))
+      if(df2 > 2){mean = df2/(df2-2)}
+      else{mean = "Undefined"}
+      if(df2 > 4) var = 2*df2*df2*(df1+df2-2)/(df1*(df2-2)*(df2-2)*(df2-4))
       else var = "Undefined"
       c(mean, var)
     },

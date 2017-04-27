@@ -7,8 +7,8 @@ Visualize's Processing Function
 Acts as a director of traffic and first line of error handling regarding submitted visualization requests. This function should only be used by advanced users.
 }
 \usage{
-visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd = 1),
-		section = "lower", strict = c(0,1))
+visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd = 1), 
+              section = "lower", strict = c(0,1))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,10 +22,10 @@ visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd = 1),
 	A list that must contain the necessary parameters for each distribution. For example, \code{params = list(mu = 1, sd = 1)} would be for a normal distribution with mean 1 and standard deviation 1. If you are not aware of the parameters for the distribution, consider using the \code{visualize.dist} functions listed under the "See Also" section.
 }
   \item{section}{
-Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or\code{"tails"}. 
 }
   \item{strict}{
-  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. The \code{strict=} argument requires either values = 0 or = FALSE for equal to OR values = 1 or = TRUE for strict. For bounded condition use: \code{strict=c(LOWER_STRICT_VALUE, UPPER_STRICT_VALUE)}. 
+  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires either values = 0 or =FALSE for strict OR values =1 or =TRUE for equal to. For bounded condition use: \code{strict=c(0,1)} or \code{strict=c(FALSE,TRUE)}. 
 }
 }
 
@@ -44,17 +44,13 @@ James Balamuta
 }
 \examples{
 	# Defaults to lower tail evaluation
-visualize.it(dist = 'norm', stat = 1, list(mu = 3 , sd = 2), section = "upper")
+visualize.it(dist = 'norm', stat = 1, list(mu = 3 , sd = 2), section = "lower")
 
 #Set to evaluate the upper tail.
 visualize.it(dist = 'norm', stat = 1, list(mu=3,sd=2),section="upper")
 
 #Set to shade inbetween a bounded region.
-visualize.it(dist = 'norm', stat = c(-1,1),
- list(mu=0,sd=1), section="bounded")
-
-#Bare minimum of information results in a bounded evaluation. 
-visualize.it(dist = 'norm', params = list(mu=2,sd=1))
+visualize.it(dist = 'norm', stat = c(-1,1), list(mu=0,sd=1), section="bounded")
 
 #Gamma distribution evaluated at upper tail.
 visualize.it(dist = 'gamma', stat = 2, params = list(alpha=2,beta=1),section="upper")

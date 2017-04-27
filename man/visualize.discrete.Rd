@@ -21,10 +21,10 @@ visualize.discrete(dist, stat = c(0, 1), params, section = "lower", strict)
 A list that must contain the necessary parameters for each distribution. For example, \code{params = list(n = 5, prob = .25)} would be for a binomial distribution with size 5 and probability .75. If you are not aware of the parameters for the distribution, consider using the \code{visualize.}\emph{dist_name} functions listed under the "See Also" section.
 }
   \item{section}{
-Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or\code{"tails"}. 
 }
   \item{strict}{
-  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. The \code{strict=} argument requires either values = 0 or = FALSE for equal to OR values = 1 or = TRUE for strict. For bounded condition use: \code{strict=c(LOWER_STRICT_VALUE, UPPER_STRICT_VALUE)}. 
+  Determines whether the probability will be generated as a strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires either values = 0 or =FALSE for equal to OR values =1 or =TRUE for strict. For bounded condition use: \code{strict=c(0,1)} or \code{strict=c(FALSE,TRUE)}. 
 }
 }
 \author{
@@ -36,8 +36,8 @@ James Balamuta
 }
 \examples{
 #Function does not have dist look up, must go through visualize.it
-visualize.it(dist='geom', stat = c(2,4), params = list(prob = .75), 
-section = "bounded", strict = c(0,1))
+visualize.it(dist='geom', stat = c(2,4), params = list(prob = .75), section = "bounded",
+          strict = c(0,1))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

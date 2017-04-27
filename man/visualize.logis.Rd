@@ -20,7 +20,7 @@ Location of the distribution.
 Scale of the distribution.
 }
   \item{section}{
-Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or\code{"tails"}. 
 }
 }
 \value{

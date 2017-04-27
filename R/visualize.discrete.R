@@ -36,7 +36,6 @@ function(dist, stat = c(0,1), params, section = "lower", strict){
     subheader = paste("P( ",dist$variable, ineqsym ,stat, ") = ", signif(prob, digits=3))
   }
   else if(section == "bounded"){
-    if(length(stat)!= 2) stop("Incorrect Number of Stat Parameters Supplied for Bounded Condition")
     disupper = upper = stat[[2]]; dislower = lower = stat[[1]]
     
     #Map the bounds

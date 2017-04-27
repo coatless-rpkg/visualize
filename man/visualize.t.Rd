@@ -17,7 +17,7 @@ a statistic to obtain the probability from. When using the "bounded" condition, 
 Degrees of freedom
 }
   \item{section}{
-Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or\code{"tails"}. 
 }
 }
 \value{

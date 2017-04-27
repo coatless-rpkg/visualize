@@ -22,7 +22,7 @@ a statistic to obtain the probability from. When using the "bounded" condition, 
 	\code{theta} is considered to be \emph{rate} by R's implementation of the gamma distribution. \code{theta} must be greater than 0.
 }
   \item{section}{
-Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or \code{"tails"}. 
+Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"}, or\code{"tails"}. 
 }
 }
 
