@@ -1,0 +1,40 @@
+\name{visualize.discrete}
+\alias{visualize.discrete}
+\title{
+Graphing function for Discrete Distributions.
+}
+\description{
+Handles how discrete distributions are graphed. Users should not use this function. Instead, users should use \code{link{visualize.it}}.
+}
+\usage{
+visualize.discrete(dist, stat = c(0, 1), params, section = "lower")
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{dist}{
+	contains the distribution from \code{link{visualize.distributions}}.
+}
+  \item{stat}{
+ a statistic to obtain the probability from. When using the "bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.
+}
+  \item{params}{
+A list that must contain the necessary parameters for each distribution. For example, \code{params = list(n = 5, prob = .25)} would be for a binomial distribution with size 5 and probability .75. If you are not aware of the parameters for the distribution, consider using the \code{visualize.}\emph{dist_name} functions listed under the "See Also" section.
+}
+  \item{section}{
+	Select how you want the statistic(s) evaluated via \code{section=} either \code{"lower"},\code{"bounded"}, or \code{"upper"}. 
+}
+}
+\author{
+James Balamuta
+}
+
+\seealso{
+\code{\link{visualize.it}}, \code{\link{visualize.binom}}, \code{\link{visualize.geom}}, \code{\link{visualize.hyper}}, \code{\link{visualize.nbinom}}, \code{\link{visualize.pois}}.
+}
+\examples{
+#Function does not have dist look up, must go through visualize.it
+visualize.it(dist='geom', stat = c(2,4), params = list(prob = .75), section = "bounded")
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ visualize }
