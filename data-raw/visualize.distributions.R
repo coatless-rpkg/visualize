@@ -459,4 +459,8 @@ visualize.distributions = list(
 )
 #end supported distributions
 
-class(visualize.distributions)= "distributions"
+class(visualize.distributions) = "distributions"
+
+
+# use sysdata
+devtools::use_data(visualize.distributions, internal = TRUE, overwrite = TRUE)
