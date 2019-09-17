@@ -38,10 +38,10 @@ visualize.it(dist='norm', stat = c(0,1), params = list(mu = 1, sd = 1), section 
 \code{\link[=visualize.it]{visualize.it()}}, \code{\link[=visualize.beta]{visualize.beta()}},
 \code{\link[=visualize.chisq]{visualize.chisq()}}, \code{\link[=visualize.exp]{visualize.exp()}},
 \code{\link[=visualize.gamma]{visualize.gamma()}}, \code{\link[=visualize.norm]{visualize.norm()}},
-\code{\link[=visualize.unif]{visualize.unif()}}, \code{\link[=visualize.cauchy]{visualize.cauchy()}}\emph{,
-\code{\link[=visualize.f]{visualize.f()}}}, \code{\link[=visualize.lnorm]{visualize.lnorm()}}\emph{,
-\code{\link[=visualize.t]{visualize.t()}}}, \code{\link[=visualize.wilcox]{visualize.wilcox()}}\emph{,
-\code{\link[=visualize.logis]{visualize.logis()}}}. \cr * = added in v2.0.
+\code{\link[=visualize.unif]{visualize.unif()}}, \code{\link[=visualize.cauchy]{visualize.cauchy()}}*,
+\code{\link[=visualize.f]{visualize.f()}}*, \code{\link[=visualize.lnorm]{visualize.lnorm()}}*,
+\code{\link[=visualize.t]{visualize.t()}}*, \code{\link[=visualize.wilcox]{visualize.wilcox()}}*,
+\code{\link[=visualize.logis]{visualize.logis()}}*. \cr * = added in v2.0.
 }
 \author{
 James Balamuta
