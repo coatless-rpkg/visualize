@@ -4,8 +4,8 @@
 \alias{visualize.it}
 \title{Visualize's Processing Function}
 \usage{
-visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd = 1),
-  section = "lower", strict = c(0, 1))
+visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd
+  = 1), section = "lower", strict = c(0, 1))
 }
 \arguments{
 \item{dist}{a string that should be contain a supported probability
@@ -15,9 +15,7 @@ distributions name in R. Supported continuous distributions: \code{"beta"},
 \code{"geom"}, \code{"hyper"}, \code{"nbinom"}, and \code{"pois"}.}
 
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{params}{A list that must contain the necessary parameters for each
 distribution. For example, \code{params = list(mu = 1, sd = 1)} would be for
@@ -67,12 +65,12 @@ visualize.it('binom', stat = 2, params = list(n=4,p=.5))
 http://cran.r-project.org/web/views/Distributions.html
 }
 \seealso{
-\code{\link{visualize.beta}}, \code{\link{visualize.chisq}},
-\code{\link{visualize.exp}}, \code{\link{visualize.gamma}},
-\code{\link{visualize.norm}}, \code{\link{visualize.unif}},
-\code{\link{visualize.binom}}, \code{\link{visualize.geom}},
-\code{\link{visualize.hyper}}, \code{\link{visualize.nbinom}},
-\code{\link{visualize.pois}}.
+\code{\link[=visualize.beta]{visualize.beta()}}, \code{\link[=visualize.chisq]{visualize.chisq()}},
+\code{\link[=visualize.exp]{visualize.exp()}}, \code{\link[=visualize.gamma]{visualize.gamma()}},
+\code{\link[=visualize.norm]{visualize.norm()}}, \code{\link[=visualize.unif]{visualize.unif()}},
+\code{\link[=visualize.binom]{visualize.binom()}}, \code{\link[=visualize.geom]{visualize.geom()}},
+\code{\link[=visualize.hyper]{visualize.hyper()}}, \code{\link[=visualize.nbinom]{visualize.nbinom()}},
+\code{\link[=visualize.pois]{visualize.pois()}}.
 }
 \author{
 James Balamuta

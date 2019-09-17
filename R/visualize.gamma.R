@@ -4,21 +4,21 @@
 #' 
 #' 
 #' @param stat a statistic to obtain the probability from. When using the
-#' "bounded" condition, you must supply the parameter as \code{stat =
-#' c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-#' desired_point} will suffice.
-#' @param alpha \code{alpha} is considered to be \emph{shape} by R's
-#' implementation of the gamma distribution. \code{alpha} must be greater than
+#' "bounded" condition, you must supply the parameter as `stat =
+#' c(lower_bound, upper_bound)`. Otherwise, a simple `stat =
+#' desired_point` will suffice.
+#' @param alpha `alpha` is considered to be *shape* by R's
+#' implementation of the gamma distribution. `alpha` must be greater than
 #' 0.
-#' @param theta \code{theta} is considered to be \emph{rate} by R's
-#' implementation of the gamma distribution. \code{theta} must be greater than
+#' @param theta `theta` is considered to be *rate* by R's
+#' implementation of the gamma distribution. `theta` must be greater than
 #' 0.
 #' @param section Select how you want the statistic(s) evaluated via
-#' \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
-#' or\code{"tails"}.
+#' `section=` either `"lower"`,`"bounded"`, `"upper"`,
+#' or`"tails"`.
 #' @author James Balamuta
 #' @export
-#' @seealso \code{\link{visualize.it}}, \code{\link{dgamma}}.
+#' @seealso [visualize.it()], [dgamma()].
 #' @keywords visualize
 #' @examples
 #' 

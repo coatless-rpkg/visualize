@@ -8,9 +8,7 @@ visualize.wilcox(stat = 1, m = 7, n = 3, section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{m}{Sample size from group 1.}
 
@@ -41,7 +39,7 @@ visualize.wilcox(stat = 1, m = 7, n = 3, section = "upper")
 
 }
 \seealso{
-\code{\link{visualize.it}}, \code{\link{dwilcox}}.
+\code{\link[=visualize.it]{visualize.it()}}, \code{\link[=dwilcox]{dwilcox()}}.
 }
 \author{
 James Balamuta

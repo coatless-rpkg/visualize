@@ -4,16 +4,16 @@
 #' 
 #' 
 #' @param stat a statistic to obtain the probability from. When using the
-#' "bounded" condition, you must supply the parameter as \code{stat =
-#' c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-#' desired_point} will suffice.
-#' @param a starting point. Note: \code{a}<\code{b}
-#' @param b end point. Note: \code{b} > \code{a}
+#' "bounded" condition, you must supply the parameter as `stat =
+#' c(lower_bound, upper_bound)`. Otherwise, a simple `stat =
+#' desired_point` will suffice.
+#' @param a starting point. Note: `a`<`b`
+#' @param b end point. Note: `b` > `a`
 #' @param section Select how you want the statistic(s) evaluated via
-#' \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
-#' or\code{"tails"}.
+#' `section=` either `"lower"`,`"bounded"`, `"upper"`,
+#' or`"tails"`.
 #' @author James Balamuta
-#' @seealso \code{\link{visualize.it}} , \code{\link{dunif}}.
+#' @seealso [visualize.it()] , [dunif()].
 #' @export
 #' @keywords visualize
 #' @examples

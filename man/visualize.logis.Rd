@@ -4,13 +4,12 @@
 \alias{visualize.logis}
 \title{Visualize Logistic distribution}
 \usage{
-visualize.logis(stat = 1, location = 3, scale = 1, section = "lower")
+visualize.logis(stat = 1, location = 3, scale = 1,
+  section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{location}{Location of the distribution.}
 
@@ -41,7 +40,7 @@ visualize.logis(stat = 1, location = 4, scale = 2, section = "upper")
 
 }
 \seealso{
-\code{\link{visualize.it}}, \code{\link{dlogis}}.
+\code{\link[=visualize.it]{visualize.it()}}, \code{\link[=dlogis]{dlogis()}}.
 }
 \author{
 James Balamuta

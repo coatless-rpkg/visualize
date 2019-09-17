@@ -6,37 +6,37 @@
 #' 
 #' 
 #' @param dist a string that should be contain a supported probability
-#' distributions name in R. Supported continuous distributions: \code{"beta"},
-#' \code{"chisq"}, \code{"exp"}, \code{"gamma"}, \code{"norm"}, and
-#' \code{"unif"}. Supported discrete distributions: \code{"binom"},
-#' \code{"geom"}, \code{"hyper"}, \code{"nbinom"}, and \code{"pois"}.
+#' distributions name in R. Supported continuous distributions: `"beta"`,
+#' `"chisq"`, `"exp"`, `"gamma"`, `"norm"`, and
+#' `"unif"`. Supported discrete distributions: `"binom"`,
+#' `"geom"`, `"hyper"`, `"nbinom"`, and `"pois"`.
 #' @param stat a statistic to obtain the probability from. When using the
-#' "bounded" condition, you must supply the parameter as \code{stat =
-#' c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-#' desired_point} will suffice.
+#' "bounded" condition, you must supply the parameter as `stat =
+#' c(lower_bound, upper_bound)`. Otherwise, a simple `stat =
+#' desired_point` will suffice.
 #' @param params A list that must contain the necessary parameters for each
-#' distribution. For example, \code{params = list(mu = 1, sd = 1)} would be for
+#' distribution. For example, `params = list(mu = 1, sd = 1)` would be for
 #' a normal distribution with mean 1 and standard deviation 1. If you are not
 #' aware of the parameters for the distribution, consider using the
-#' \code{visualize.dist} functions listed under the "See Also" section.
+#' `visualize.dist` functions listed under the "See Also" section.
 #' @param section Select how you want the statistic(s) evaluated via
-#' \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
-#' or\code{"tails"}.
+#' `section=` either `"lower"`,`"bounded"`, `"upper"`,
+#' or`"tails"`.
 #' @param strict Determines whether the probability will be generated as a
-#' strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires
+#' strict (<, >) or equal to (<=, >=) inequality. `strict=` requires
 #' either values = 0 or =FALSE for strict OR values =1 or =TRUE for equal to.
-#' For bounded condition use: \code{strict=c(0,1)} or
-#' \code{strict=c(FALSE,TRUE)}.
+#' For bounded condition use: `strict=c(0,1)` or
+#' `strict=c(FALSE,TRUE)`.
 #' @return Returns a plot of the distribution according to the conditions
 #' supplied.
 #' @author James Balamuta
 #' @export
-#' @seealso \code{\link{visualize.beta}}, \code{\link{visualize.chisq}},
-#' \code{\link{visualize.exp}}, \code{\link{visualize.gamma}},
-#' \code{\link{visualize.norm}}, \code{\link{visualize.unif}},
-#' \code{\link{visualize.binom}}, \code{\link{visualize.geom}},
-#' \code{\link{visualize.hyper}}, \code{\link{visualize.nbinom}},
-#' \code{\link{visualize.pois}}.
+#' @seealso [visualize.beta()], [visualize.chisq()],
+#' [visualize.exp()], [visualize.gamma()],
+#' [visualize.norm()], [visualize.unif()],
+#' [visualize.binom()], [visualize.geom()],
+#' [visualize.hyper()], [visualize.nbinom()],
+#' [visualize.pois()].
 #' @references http://cran.r-project.org/web/views/Distributions.html
 #' @keywords visualize
 #' @examples

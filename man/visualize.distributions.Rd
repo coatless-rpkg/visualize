@@ -4,39 +4,39 @@
 \name{visualize.distributions}
 \alias{visualize.distributions}
 \title{Visualize's Supported Distributions}
-\format{Distributions are loaded with the following format: 
+\format{Distributions are loaded with the following format:
 \tabular{ll}{
-    type: \tab specify either \code{"continuous"} or \code{"discrete"} \cr
-          \tab to direct the query to the right graph handler. \cr
-    name: \tab specify the name of the distribution. \cr 
-          \tab In example, "Poisson Distribution."   \cr 
-          \tab This is used in the main graph title. \cr
+type: \tab specify either \code{"continuous"} or \code{"discrete"} \cr
+\tab to direct the query to the right graph handler. \cr
+name: \tab specify the name of the distribution. \cr
+\tab In example, "Poisson Distribution."   \cr
+\tab This is used in the main graph title. \cr
 variable: \tab specify the variable in probability statement.\cr
-          \tab In example, P(z < 5). \cr
-          \tab This is used in the probability subtitle. \cr
+\tab In example, P(z < 5). \cr
+\tab This is used in the probability subtitle. \cr
 varsymbols:\tab specify the variable symbols for distribution.\cr
-           \tab In example, mu = 1 sd = 2. \cr
-           \tab This is used in the distribution subtitle. \cr
+\tab In example, mu = 1 sd = 2. \cr
+\tab This is used in the distribution subtitle. \cr
 params:    \tab specify the amount of params required for distribution.\cr
-           \tab This is used in the first error handling check to ensure\cr
-           \tab the correct number of params is supplied.\cr
+\tab This is used in the first error handling check to ensure\cr
+\tab the correct number of params is supplied.\cr
 init(params, ...):\tab Function that generates the mean and variance \cr
-                   \tab of a distribution.\cr
+\tab of a distribution.\cr
 
 density(x, params, ncp = 0, lower.tail = TRUE, log = FALSE, ...):\tab
-Function that provides the density value using vectors of the \cr 
-\tab quantiles from the distribution. \cr 
-\tab This serves as a wrapper for \bold{d}\emph{distr_name}. \cr
+Function that provides the density value using vectors of the \cr
+\tab quantiles from the distribution. \cr
+\tab This serves as a wrapper for \strong{d}\emph{distr_name}. \cr
 
 probability(x, params, ncp = 0, lower.tail = TRUE, log.p = FALSE, ...) \tab
-Function that provides the probability value \cr 
-\tab using vectors of quantiles from the distribution. \cr 
-\tab This serves as a wrapper for \bold{p}\emph{distr_name}.\cr
+Function that provides the probability value \cr
+\tab using vectors of quantiles from the distribution. \cr
+\tab This serves as a wrapper for \strong{p}\emph{distr_name}.\cr
 
 quantile(x, params, ncp = 0, lower.tail = TRUE, log.p = FALSE, ...) \tab
 Function that provides the quantile value \cr
 \tab using vectors of probabilities from the distribution. \cr
-\tab This serves as a wrapper for \bold{q}\emph{distr_name}.\cr
+\tab This serves as a wrapper for \strong{q}\emph{distr_name}.\cr
 
 }
 
@@ -51,7 +51,9 @@ F* \tab f \tab Uniform \tab unif\cr
 Gamma \tab gamma \tab Geometric \tab geom \cr
 Hypergeometric \tab hyper \tab Wilcoxon* \tab wilcox\cr
 Logistic* \tab logis\tab \tab \cr }
-* denotes the distribution was added in v2.0.}
+\itemize{
+\item denotes the distribution was added in v2.0.
+}}
 \usage{
 visualize.distributions
 }

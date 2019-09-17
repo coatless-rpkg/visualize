@@ -4,13 +4,12 @@
 \alias{visualize.geom}
 \title{Visualize Geometric Distribution}
 \usage{
-visualize.geom(stat = 1, prob = 0.3, section = "lower", strict = FALSE)
+visualize.geom(stat = 1, prob = 0.3, section = "lower",
+  strict = FALSE)
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{prob}{probability of picking object.}
 
@@ -41,7 +40,7 @@ visualize.geom(stat = 1, prob = 0.5, section = "upper", strict = 1)
 
 }
 \seealso{
-\code{\link{visualize.it}} , \code{\link{dgeom}}.
+\code{\link[=visualize.it]{visualize.it()}} , \code{\link[=dgeom]{dgeom()}}.
 }
 \author{
 James Balamuta

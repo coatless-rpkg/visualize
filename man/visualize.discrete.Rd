@@ -4,16 +4,15 @@
 \alias{visualize.discrete}
 \title{Graphing function for Discrete Distributions.}
 \usage{
-visualize.discrete(dist, stat = c(0, 1), params, section = "lower", strict)
+visualize.discrete(dist, stat = c(0, 1), params, section = "lower",
+  strict)
 }
 \arguments{
 \item{dist}{contains the distribution from
 \code{link{visualize.distributions}}.}
 
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{params}{A list that must contain the necessary parameters for each
 distribution. For example, \code{params = list(n = 5, prob = .25)} would be
@@ -44,9 +43,9 @@ visualize.it(dist='geom', stat = c(2,4), params = list(prob = .75), section = "b
 
 }
 \seealso{
-\code{\link{visualize.it}}, \code{\link{visualize.binom}},
-\code{\link{visualize.geom}}, \code{\link{visualize.hyper}},
-\code{\link{visualize.nbinom}}, \code{\link{visualize.pois}}.
+\code{\link[=visualize.it]{visualize.it()}}, \code{\link[=visualize.binom]{visualize.binom()}},
+\code{\link[=visualize.geom]{visualize.geom()}}, \code{\link[=visualize.hyper]{visualize.hyper()}},
+\code{\link[=visualize.nbinom]{visualize.nbinom()}}, \code{\link[=visualize.pois]{visualize.pois()}}.
 }
 \author{
 James Balamuta

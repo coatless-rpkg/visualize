@@ -4,13 +4,12 @@
 \alias{visualize.lnorm}
 \title{Visualize Log Normal Distribution}
 \usage{
-visualize.lnorm(stat = 1, meanlog = 3, sdlog = 1, section = "lower")
+visualize.lnorm(stat = 1, meanlog = 3, sdlog = 1,
+  section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{meanlog}{Mean of the distribution}
 
@@ -41,7 +40,7 @@ visualize.lnorm(stat = 1, meanlog = 3, sdlog = 1, section = "upper")
 
 }
 \seealso{
-\code{\link{visualize.it}}, \code{\link{dlnorm}}.
+\code{\link[=visualize.it]{visualize.it()}}, \code{\link[=dlnorm]{dlnorm()}}.
 }
 \author{
 James Balamuta
