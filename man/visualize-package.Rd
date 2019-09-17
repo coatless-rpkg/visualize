@@ -7,10 +7,10 @@
 \title{visualize: Graph Probability Distributions with User Supplied Parameters and Statistics}
 \description{
 Graphs the pdf or pmf and highlights what area or probability is
-present in user defined locations. Visualize is able to provide lower tail,
-bounded, upper tail, and two tail calculations. Supports strict and equal
-to inequalities.  Also provided on the graph is the mean and variance of
-the distribution.
+    present in user defined locations. Visualize is able to provide lower tail,
+    bounded, upper tail, and two tail calculations. Supports strict and equal
+    to inequalities.  Also provided on the graph is the mean and variance of
+    the distribution.
 }
 \examples{
 
@@ -41,6 +41,6 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{james.balamuta@gmail.com} [copyright holder]
+\strong{Maintainer}: James Balamuta \email{james.balamuta@gmail.com} (0000-0003-2826-8458) [copyright holder]
 
 }
