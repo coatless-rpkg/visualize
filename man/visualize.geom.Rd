@@ -4,7 +4,8 @@
 \alias{visualize.geom}
 \title{Visualize Geometric Distribution}
 \usage{
-visualize.geom(stat = 1, prob = 0.3, section = "lower", strict = FALSE)
+visualize.geom(stat = 1, prob = 0.3, section = "lower",
+  strict = FALSE)
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the

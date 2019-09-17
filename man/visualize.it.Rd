@@ -4,8 +4,8 @@
 \alias{visualize.it}
 \title{Visualize's Processing Function}
 \usage{
-visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd = 1),
-  section = "lower", strict = c(0, 1))
+visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd
+  = 1), section = "lower", strict = c(0, 1))
 }
 \arguments{
 \item{dist}{a string that should be contain a supported probability

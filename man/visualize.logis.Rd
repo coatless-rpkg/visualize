@@ -4,7 +4,8 @@
 \alias{visualize.logis}
 \title{Visualize Logistic distribution}
 \usage{
-visualize.logis(stat = 1, location = 3, scale = 1, section = "lower")
+visualize.logis(stat = 1, location = 3, scale = 1,
+  section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the

@@ -4,7 +4,8 @@
 \alias{visualize.discrete}
 \title{Graphing function for Discrete Distributions.}
 \usage{
-visualize.discrete(dist, stat = c(0, 1), params, section = "lower", strict)
+visualize.discrete(dist, stat = c(0, 1), params, section = "lower",
+  strict)
 }
 \arguments{
 \item{dist}{contains the distribution from

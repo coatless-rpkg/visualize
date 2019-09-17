@@ -4,7 +4,8 @@
 \alias{visualize.cauchy}
 \title{Visualize Cauchy Distribution}
 \usage{
-visualize.cauchy(stat = 1, location = 2, scale = 1, section = "lower")
+visualize.cauchy(stat = 1, location = 2, scale = 1,
+  section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the

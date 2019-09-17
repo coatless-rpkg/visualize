@@ -4,7 +4,8 @@
 \alias{visualize.lnorm}
 \title{Visualize Log Normal Distribution}
 \usage{
-visualize.lnorm(stat = 1, meanlog = 3, sdlog = 1, section = "lower")
+visualize.lnorm(stat = 1, meanlog = 3, sdlog = 1,
+  section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
