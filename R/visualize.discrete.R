@@ -7,27 +7,27 @@
 #' @param dist contains the distribution from
 #' \code{link{visualize.distributions}}.
 #' @param stat a statistic to obtain the probability from. When using the
-#' "bounded" condition, you must supply the parameter as \code{stat =
-#' c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-#' desired_point} will suffice.
+#' "bounded" condition, you must supply the parameter as `stat =
+#' c(lower_bound, upper_bound)`. Otherwise, a simple `stat =
+#' desired_point` will suffice.
 #' @param params A list that must contain the necessary parameters for each
-#' distribution. For example, \code{params = list(n = 5, prob = .25)} would be
+#' distribution. For example, `params = list(n = 5, prob = .25)` would be
 #' for a binomial distribution with size 5 and probability .75. If you are not
 #' aware of the parameters for the distribution, consider using the
-#' \code{visualize.}\emph{dist_name} functions listed under the "See Also"
+#' `visualize.`*dist_name* functions listed under the "See Also"
 #' section.
 #' @param section Select how you want the statistic(s) evaluated via
-#' \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
-#' or\code{"tails"}.
+#' `section=` either `"lower"`,`"bounded"`, `"upper"`,
+#' or`"tails"`.
 #' @param strict Determines whether the probability will be generated as a
-#' strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires
+#' strict (<, >) or equal to (<=, >=) inequality. `strict=` requires
 #' either values = 0 or =FALSE for equal to OR values =1 or =TRUE for strict.
-#' For bounded condition use: \code{strict=c(0,1)} or
-#' \code{strict=c(FALSE,TRUE)}.
+#' For bounded condition use: `strict=c(0,1)` or
+#' `strict=c(FALSE,TRUE)`.
 #' @author James Balamuta
-#' @seealso \code{\link{visualize.it}}, \code{\link{visualize.binom}},
-#' \code{\link{visualize.geom}}, \code{\link{visualize.hyper}},
-#' \code{\link{visualize.nbinom}}, \code{\link{visualize.pois}}.
+#' @seealso [visualize.it()], [visualize.binom()],
+#' [visualize.geom()], [visualize.hyper()],
+#' [visualize.nbinom()], [visualize.pois()].
 #' @export
 #' @keywords visualize
 #' @examples

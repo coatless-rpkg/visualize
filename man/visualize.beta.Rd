@@ -8,9 +8,7 @@ visualize.beta(stat = 1, alpha = 3, beta = 2, section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{alpha}{\code{alpha} is considered to be \emph{shape1} by R's
 implementation of the beta distribution. \code{alpha} must be greater than
@@ -43,7 +41,7 @@ visualize.beta(stat = 1, alpha = 2, beta = 3, section = "upper")
 
 }
 \seealso{
-\code{\link{visualize.it}}, \code{\link{dbeta}}.
+\code{\link[=visualize.it]{visualize.it()}}, \code{\link[=dbeta]{dbeta()}}.
 }
 \author{
 James Balamuta

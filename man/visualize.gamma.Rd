@@ -8,9 +8,7 @@ visualize.gamma(stat = 1, alpha = 1, theta = 1, section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{alpha}{\code{alpha} is considered to be \emph{shape} by R's
 implementation of the gamma distribution. \code{alpha} must be greater than
@@ -41,7 +39,7 @@ visualize.gamma(stat = 1, alpha = 3, theta = 1, section = "upper")
 
 }
 \seealso{
-\code{\link{visualize.it}}, \code{\link{dgamma}}.
+\code{\link[=visualize.it]{visualize.it()}}, \code{\link[=dgamma]{dgamma()}}.
 }
 \author{
 James Balamuta

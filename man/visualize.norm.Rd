@@ -8,9 +8,7 @@ visualize.norm(stat = 1, mu = 0, sd = 1, section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{mu}{mean of the Normal Distribution.}
 
@@ -36,6 +34,6 @@ visualize.norm(stat = 1, mu = 3, sd = 2, section = "upper")
 
 }
 \seealso{
-\code{\link{visualize.it}} , \code{\link{dnorm}}.
+\code{\link[=visualize.it]{visualize.it()}} , \code{\link[=dnorm]{dnorm()}}.
 }
 \keyword{visualize}

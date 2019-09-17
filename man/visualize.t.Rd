@@ -8,9 +8,7 @@ visualize.t(stat = 1, df = 3, section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{df}{Degrees of freedom}
 
@@ -39,7 +37,7 @@ visualize.t(stat = 1, df = 4, section = "upper")
 
 }
 \seealso{
-\code{\link{visualize.it}}, \code{\link{dt}}.
+\code{\link[=visualize.it]{visualize.it()}}, \code{\link[=dt]{dt()}}.
 }
 \author{
 James Balamuta

@@ -4,16 +4,16 @@
 #' 
 #' 
 #' @param stat a statistic to obtain the probability from. When using the
-#' "bounded" condition, you must supply the parameter as \code{stat =
-#' c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-#' desired_point} will suffice.
+#' "bounded" condition, you must supply the parameter as `stat =
+#' c(lower_bound, upper_bound)`. Otherwise, a simple `stat =
+#' desired_point` will suffice.
 #' @param mu mean of the Normal Distribution.
 #' @param sd standard deviation of the Normal Distribution.
 #' @param section Select how you want the statistic(s) evaluated via
-#' \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
-#' or\code{"tails"}.
+#' `section=` either `"lower"`,`"bounded"`, `"upper"`,
+#' or`"tails"`.
 #' @export
-#' @seealso \code{\link{visualize.it}} , \code{\link{dnorm}}.
+#' @seealso [visualize.it()] , [dnorm()].
 #' @keywords visualize
 #' @examples
 #' 

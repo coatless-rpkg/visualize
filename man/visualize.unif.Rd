@@ -8,9 +8,7 @@ visualize.unif(stat = 1, a = 0, b = 1, section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{a}{starting point. Note: \code{a}<\code{b}}
 
@@ -36,7 +34,7 @@ visualize.unif(stat = 2, a = 1, b = 5, section = "upper")
 
 }
 \seealso{
-\code{\link{visualize.it}} , \code{\link{dunif}}.
+\code{\link[=visualize.it]{visualize.it()}} , \code{\link[=dunif]{dunif()}}.
 }
 \author{
 James Balamuta

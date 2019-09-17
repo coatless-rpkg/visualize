@@ -9,9 +9,7 @@ visualize.nbinom(stat = 1, size = 6, prob = 0.5, section = "lower",
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{size}{number of objects.}
 
@@ -45,7 +43,7 @@ visualize.nbinom(stat = 1, size = 5, prob = 0.5, section = "upper", strict = 1)
 
 }
 \seealso{
-\code{\link{visualize.it}} , \code{\link{dnbinom}}.
+\code{\link[=visualize.it]{visualize.it()}} , \code{\link[=dnbinom]{dnbinom()}}.
 }
 \author{
 James Balamuta

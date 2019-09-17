@@ -9,9 +9,7 @@ visualize.binom(stat = 1, size = 3, prob = 0.5, section = "lower",
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{size}{size of sample.}
 
@@ -44,7 +42,7 @@ visualize.binom(stat = 1, size = 3, prob = 0.5, section = "upper", strict = TRUE
 
 }
 \seealso{
-\code{\link{visualize.it}} , \code{\link{dbinom}}.
+\code{\link[=visualize.it]{visualize.it()}} , \code{\link[=dbinom]{dbinom()}}.
 }
 \author{
 James Balamuta

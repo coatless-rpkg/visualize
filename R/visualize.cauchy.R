@@ -4,19 +4,19 @@
 #' 
 #' 
 #' @param stat a statistic to obtain the probability from. When using the
-#' "bounded" condition, you must supply the parameter as \code{stat =
-#' c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-#' desired_point} will suffice.
+#' "bounded" condition, you must supply the parameter as `stat =
+#' c(lower_bound, upper_bound)`. Otherwise, a simple `stat =
+#' desired_point` will suffice.
 #' @param location location parameter
 #' @param scale scale parameter
 #' @param section Select how you want the statistic(s) evaluated via
-#' \code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
-#' or\code{"tails"}.
+#' `section=` either `"lower"`,`"bounded"`, `"upper"`,
+#' or`"tails"`.
 #' @return Returns a plot of the distribution according to the conditions
 #' supplied.
 #' @author James Balamuta
 #' @export
-#' @seealso \code{\link{visualize.it}}, \code{\link{dcauchy}}.
+#' @seealso [visualize.it()], [dcauchy()].
 #' @keywords visualize
 #' @examples
 #' 

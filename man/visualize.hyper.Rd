@@ -9,9 +9,7 @@ visualize.hyper(stat = 1, m = 5, n = 4, k = 2, section = "lower",
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{m}{\code{m} white balls. \code{m} must be greater than 0.}
 
@@ -46,7 +44,7 @@ visualize.hyper(stat = 1, m=4, n=5, k=3, section = "upper", strict = 1)
 
 }
 \seealso{
-\code{\link{visualize.it}} , \code{\link{dhyper}}.
+\code{\link[=visualize.it]{visualize.it()}} , \code{\link[=dhyper]{dhyper()}}.
 }
 \author{
 James Balamuta

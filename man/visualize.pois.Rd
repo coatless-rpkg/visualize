@@ -9,9 +9,7 @@ visualize.pois(stat = 1, lambda = 3.5, section = "lower",
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
-"bounded" condition, you must supply the parameter as \code{stat =
-c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat =
-desired_point} will suffice.}
+"bounded" condition, you must supply the parameter as \code{stat = c(lower_bound, upper_bound)}. Otherwise, a simple \code{stat = desired_point} will suffice.}
 
 \item{lambda}{lambda value of the Poisson Distribution.}
 
@@ -41,7 +39,7 @@ visualize.pois(stat = 1, lambda = 2, section = "upper", strict = 1)
 
 }
 \seealso{
-\code{\link{visualize.it}} , \code{\link{dpois}}.
+\code{\link[=visualize.it]{visualize.it()}} , \code{\link[=dpois]{dpois()}}.
 }
 \author{
 James Balamuta
