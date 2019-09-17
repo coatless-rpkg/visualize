@@ -91,7 +91,7 @@ visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(TRUE, TRUE))
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="50%" />
+<img src="man/figures/README-discrete-inequalities-1.png" width="50%" />
 
 ``` r
 
@@ -99,7 +99,7 @@ visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(TRUE, FALSE))
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-2.png" width="50%" />
+<img src="man/figures/README-discrete-inequalities-2.png" width="50%" />
 
 ``` r
 
@@ -107,7 +107,7 @@ visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(FALSE, FALSE))
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-3.png" width="50%" />
+<img src="man/figures/README-discrete-inequalities-3.png" width="50%" />
 
 ## Author
 
