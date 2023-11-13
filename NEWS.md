@@ -3,6 +3,7 @@
 ## CHANGES
 
 - Removed unicode to display variables and inequalities per CRAN request.
+- Increased the required R version to v4.0.0.
 - Switched deployment from Travis to GitHub Actions
 - Added a pkgdown website.
 
