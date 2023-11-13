@@ -17,8 +17,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/coatless-rpkg/visualize/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/coatless-rpkg/visualize/actions/workflows/R-CMD-check.yaml)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/visualize)](http://www.r-pkg.org/pkg/visualize)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/visualize)](https://cran.r-project.org/package=visualize)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/visualize)](https://www.r-pkg.org/pkg/visualize)
+[![CRAN status](https://www.r-pkg.org/badges/version/visualize)](https://CRAN.R-project.org/package=visualize)
 <!-- badges: end -->
 
 The goal of visualize is to graph the pdf or pmf and highlight what area or
