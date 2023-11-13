@@ -4,8 +4,7 @@
 \alias{visualize.pois}
 \title{Visualize Poisson Distribution}
 \usage{
-visualize.pois(stat = 1, lambda = 3.5, section = "lower",
-  strict = FALSE)
+visualize.pois(stat = 1, lambda = 3.5, section = "lower", strict = FALSE)
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
@@ -14,11 +13,11 @@ visualize.pois(stat = 1, lambda = 3.5, section = "lower",
 \item{lambda}{lambda value of the Poisson Distribution.}
 
 \item{section}{Select how you want the statistic(s) evaluated via
-\code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
+\verb{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
 or\code{"tails"}.}
 
 \item{strict}{Determines whether the probability will be generated as a
-strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires
+strict (<, >) or equal to (<=, >=) inequality. \verb{strict=} requires
 either values = 0 or =FALSE for equal to OR values =1 or =TRUE for strict.
 For bounded condition use: \code{strict=c(0,1)} or
 \code{strict=c(FALSE,TRUE)}.}

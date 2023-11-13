@@ -4,8 +4,13 @@
 \alias{visualize.it}
 \title{Visualize's Processing Function}
 \usage{
-visualize.it(dist = "norm", stat = c(0, 1), params = list(mu = 0, sd
-  = 1), section = "lower", strict = c(0, 1))
+visualize.it(
+  dist = "norm",
+  stat = c(0, 1),
+  params = list(mu = 0, sd = 1),
+  section = "lower",
+  strict = c(0, 1)
+)
 }
 \arguments{
 \item{dist}{a string that should be contain a supported probability
@@ -24,11 +29,11 @@ aware of the parameters for the distribution, consider using the
 \code{visualize.dist} functions listed under the "See Also" section.}
 
 \item{section}{Select how you want the statistic(s) evaluated via
-\code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
+\verb{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
 or\code{"tails"}.}
 
 \item{strict}{Determines whether the probability will be generated as a
-strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires
+strict (<, >) or equal to (<=, >=) inequality. \verb{strict=} requires
 either values = 0 or =FALSE for strict OR values =1 or =TRUE for equal to.
 For bounded condition use: \code{strict=c(0,1)} or
 \code{strict=c(FALSE,TRUE)}.}

@@ -6,11 +6,7 @@
 \alias{visualize-package}
 \title{visualize: Graph Probability Distributions with User Supplied Parameters and Statistics}
 \description{
-Graphs the pdf or pmf and highlights what area or probability is
-    present in user defined locations. Visualize is able to provide lower tail,
-    bounded, upper tail, and two tail calculations. Supports strict and equal
-    to inequalities.  Also provided on the graph is the mean and variance of
-    the distribution.
+Graphs the pdf or pmf and highlights what area or probability is present in user defined locations. Visualize is able to provide lower tail, bounded, upper tail, and two tail calculations. Supports strict and equal to inequalities. Also provided on the graph is the mean and variance of the distribution.
 }
 \examples{
 
@@ -34,13 +30,13 @@ visualize.gamma(stat = 2, alpha = 2, theta = 1, section="upper")
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/coatless/visualize}
-  \item \url{http://thecoatlessprofessor.com/projects/visualize/}
-  \item Report bugs at \url{https://github.com/coatless/visualize/issues}
+  \item \url{https://github.com/coatless-rpkg/visualize}
+  \item \url{https://thecoatlessprofessor.com/projects/visualize/}
+  \item Report bugs at \url{https://github.com/coatless-rpkg/visualize/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: James Balamuta \email{james.balamuta@gmail.com} (0000-0003-2826-8458) [copyright holder]
+\strong{Maintainer}: James Balamuta \email{james.balamuta@gmail.com} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
 
 }

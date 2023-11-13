@@ -4,8 +4,7 @@
 \alias{visualize.logis}
 \title{Visualize Logistic distribution}
 \usage{
-visualize.logis(stat = 1, location = 3, scale = 1,
-  section = "lower")
+visualize.logis(stat = 1, location = 3, scale = 1, section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
@@ -16,7 +15,7 @@ visualize.logis(stat = 1, location = 3, scale = 1,
 \item{scale}{Scale of the distribution.}
 
 \item{section}{Select how you want the statistic(s) evaluated via
-\code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
+\verb{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
 or\code{"tails"}.}
 }
 \value{
