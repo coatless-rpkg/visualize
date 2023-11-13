@@ -56,10 +56,8 @@ the normal distribution can be shown with:
 ```{r visualize-normal}
 # Graph a standard normal distribution with a z-score of 1.96
 visualize.norm(1.96)
-
 # Change the location of the tail
 visualize.norm(1.96, section = "upper")
-
 # Shift the mean and create a bounded range.
 visualize.norm(c(-1.96, 1.96), section = "bounded")
 ```
@@ -69,7 +67,7 @@ Binomial distribution.
 
 ```{r visualize-binomial}
 visualize.binom(stat = 9, size = 20, p = 0.5)
-
+# Visualize the binominal distribution with a higher size and lower probability.
 visualize.binom(stat = 9, size = 24, p = 0.25)
 ```
 
@@ -78,12 +76,13 @@ to (`<=`, `>=`) inequality.
 
 
 ```{r discrete-inequalities}
+# Create a strict inequality (lower < x < higher)
 visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(TRUE, TRUE))
-
+# Allow for equality on either side only on the right side of the bounded region.
 visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(TRUE, FALSE))
-
+# Allow for equality on either side of the inequality (lower <= x <= higher)
 visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(FALSE, FALSE))
 ```

@@ -52,7 +52,6 @@ visualize.norm(1.96)
 <img src="man/figures/README-visualize-normal-1.png" width="50%" />
 
 ``` r
-
 # Change the location of the tail
 visualize.norm(1.96, section = "upper")
 ```
@@ -60,7 +59,6 @@ visualize.norm(1.96, section = "upper")
 <img src="man/figures/README-visualize-normal-2.png" width="50%" />
 
 ``` r
-
 # Shift the mean and create a bounded range.
 visualize.norm(c(-1.96, 1.96), section = "bounded")
 ```
@@ -77,7 +75,7 @@ visualize.binom(stat = 9, size = 20, p = 0.5)
 <img src="man/figures/README-visualize-binomial-1.png" width="50%" />
 
 ``` r
-
+# Visualize the binominal distribution with a higher size and lower probability.
 visualize.binom(stat = 9, size = 24, p = 0.25)
 ```
 
@@ -87,6 +85,7 @@ Discrete distributions can also handle a level of strict (`<`, `>`) or
 equal to (`<=`, `>=`) inequality.
 
 ``` r
+# Create a strict inequality (lower < x < higher)
 visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(TRUE, TRUE))
 ```
@@ -94,7 +93,7 @@ visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
 <img src="man/figures/README-discrete-inequalities-1.png" width="50%" />
 
 ``` r
-
+# Allow for equality on either side only on the right side of the bounded region.
 visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(TRUE, FALSE))
 ```
@@ -102,7 +101,7 @@ visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
 <img src="man/figures/README-discrete-inequalities-2.png" width="50%" />
 
 ``` r
-
+# Allow for equality on either side of the inequality (lower <= x <= higher)
 visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
   strict = c(FALSE, FALSE))
 ```
