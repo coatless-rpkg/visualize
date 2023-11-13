@@ -71,7 +71,7 @@ function(dist, stat = c(0,1), params, section = "lower", strict){
     
     prob = dist$probability(stat-1*(strict[[1]] == 1),params)
     ineqsym = if(strict[[1]]==0){" <= "}else{" < "}
-    subheader = paste("P( ",dist$variable, ineqsym ,stat, ") = ", signif(prob, digits=3))
+    subheader = bquote(P( .(as.name(dist$variable)) ~ .(as.name(ineqsym)) ~ .(as.name(stat)) ) == ~.(signif(prob, digits=3)))
   }
   else if(section == "bounded"){
     disupper = upper = stat[[2]]; dislower = lower = stat[[1]]
@@ -107,7 +107,8 @@ function(dist, stat = c(0,1), params, section = "lower", strict){
     if(prob < 0) {prob = 0}
     low_ineq = if(strict[[1]]==0){" <= "}else{" < "}
     upper_ineq = if(strict[[2]]==0){" <= "}else{" < "}
-    subheader = paste("P(",dislower,low_ineq,dist$variable,upper_ineq,disupper,") =", signif(prob, digits=3))
+    
+    subheader = bquote(P( .(as.name(dislower)) ~ .(as.name(low_ineq)) ~ .(as.name(dist$variable)) ~ .(as.name(upper_ineq)) ~ .(as.name(disupper))  ) ==  .(signif(prob, digits=3)))
   }
   else if(section == "upper"){
     span = upper_bound-lower_bound+1
@@ -121,8 +122,8 @@ function(dist, stat = c(0,1), params, section = "lower", strict){
     barplot(y, ylim = c(0, ymax), col=c(rep("white",i),rep("blue",j)), axes = FALSE)
     barplot(y, ylim = c(0, ymax), xlab = "Values", ylab = "Probability", names.arg = x, main=graphmain, col=c(rep("white",i),rep("orange",j)), density=c(rep(0,i),rep(3,j)), add = TRUE)
     prob = 1-dist$probability(stat-1*(strict[[1]] == 0),params)
-    ineqsym = if(strict[[1]]==0){" \u2265 "}else{" > "}
-    subheader = paste("P( ",dist$variable, ineqsym, stat, " ) =", signif(prob, digits=3))
+    ineqsym = if(strict[[1]]==0){">="}else{">"}
+    subheader = bquote(P( .(as.name(dist$variable)) ~ .(as.name(ineqsym)) ~ .(as.name(stat)) ) == .(signif(prob, digits=3)))
   }
   else if(section == "tails") #implemented in v4.0
   {
@@ -160,11 +161,11 @@ function(dist, stat = c(0,1), params, section = "lower", strict){
     
     #handle legend information
     prob = 1-dist$probability(upper_stat-1*(!upper_strict),params)+dist$probability(lower_stat-1*(lower_strict),params)
-    upper_ineqsym = if(!upper_strict){" >= "}else{" > "}
-    lower_ineqsym = if(!lower_strict){" <= "}else{" < "}
-    subheader = paste("P( ",dist$variable, lower_ineqsym ,lower_stat, " ) + P( ",dist$variable, upper_ineqsym, upper_stat, " ) =", signif(prob, digits=3))
+    upper_ineqsym = if(!upper_strict){">="}else{">"}
+    lower_ineqsym = if(!lower_strict){"<="}else{"<"}
+    subheader = bquote(P( .(as.name(dist$variable)) ~ .(as.name(lower_ineqsym)) ~ .(as.name(lower_stat)) ) + P( .(as.name(dist$variable)) ~ .(as.name(upper_ineqsym)) ~ .(as.name(upper_stat))  ) == .(signif(prob, digits=3)))
   }
-  else{ stop("Section not specified. Please choose either lower, bounded, tails, or upper.") }
+  else{ stop("Section not specified. Please choose either: `lower`, `bounded`, `tails`, or `upper`.") }
   
   if(length(stat)==1){
     axis(1,at=i+1,labels=bquote(eta[.(stat[[1]])]), line=.69)

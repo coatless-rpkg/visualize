@@ -95,7 +95,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange")    
     prob = dist$probability(stat,params)
-    subheader = paste("P( ",dist$variable," <= ",stat, ") = ", signif(prob, digits=3))
+    subheader = bquote(P(.(dist$variable) <= .(stat)) == .(signif(prob, digits=3)))
   }
   else if(section == "bounded"){
     start = stat[[1]]; end = stat[[2]];
@@ -104,7 +104,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange");   
     prob = dist$probability(end,params) - dist$probability(start,params)
-    subheader = paste("P(",start," <= ",dist$variable," <= ",end,") =", signif(prob, digits=3))
+    subheader = bquote(P(.(start) <= ~ .(as.name(dist$variable)) <= ~ .(end)) == .(signif(prob, digits=3)))
   }
   else if(section == "upper"){
     if(ub < stat){
@@ -115,7 +115,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange")  
     prob = 1-dist$probability(stat,params)
-    subheader = paste("P( ",dist$variable," >= ", stat, " ) =", signif(prob, digits=3))
+    subheader = bquote(P(.(dist$variable) >= .(stat)) == .(signif(prob, digits=3)))
   }
   else if(section == "tails"){
     lower_stat = stat[[1]];upper_stat=stat[[2]];
