@@ -41,3 +41,4 @@ Useful links:
 \strong{Maintainer}: James Balamuta \email{james.balamuta@gmail.com} (\href{https://orcid.org/0000-0003-2826-8458}{ORCID}) [copyright holder]
 
 }
+\keyword{internal}

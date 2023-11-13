@@ -1,3 +1,4 @@
+#' @keywords internal
 #' @importFrom graphics axis barplot mtext plot polygon title
 #' @examples
 #' 
