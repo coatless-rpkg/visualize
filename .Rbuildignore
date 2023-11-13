@@ -7,3 +7,6 @@
 ^\.travis\.yml$
 ^CRAN-RELEASE$
 ^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
