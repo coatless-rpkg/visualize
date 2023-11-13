@@ -4,7 +4,6 @@
 #' and quantile functions. In addition, mean and variance functions are
 #' present. Other descriptors also exist and are documented below.
 #' 
-#' 
 #' @format 
 #' Distributions are loaded with the following format: 
 #' \tabular{ll}{
@@ -57,7 +56,6 @@
 #' @author James Balamuta
 #' @keywords datasets internal
 #' @examples
-#' 
 #' visualize.distributions = list(
 #'   'beta' = list(
 #'     type = "continuous",
