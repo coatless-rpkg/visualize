@@ -2,3 +2,39 @@ url: http://r-pkg.thecoatlessprofessor.com/visualize/
 template:
   bootstrap: 5
 
+reference:
+- subtitle: Continuous Distributions
+  desc: >
+    Visualize Distributions that are Continuous
+  contents:
+  - visualize.beta
+  - visualize.chisq
+  - visualize.exp
+  - visualize.gamma
+  - visualize.norm
+  - visualize.unif
+  - visualize.cauchy
+  - visualize.f
+  - visualize.lnorm
+  - visualize.t
+  - visualize.wilcox
+  - visualize.logis
+  - visualize.continuous
+- subtitle: Discrete Distributions
+  desc: >
+    Visualize Distributions that are Discrete
+  contents:
+  - visualize.binom
+  - visualize.geom
+  - visualize.hyper
+  - visualize.nbinom
+  - visualize.pois
+  - visualize.discrete
+  
+- subtitle: Low-level graph functions
+  desc: >
+    Underlying functions that power graphing for the package.
+  contents:
+  - visualize.continuous
+  - visualize.discrete
+  - visualize.it
