@@ -1,3 +1,11 @@
+# visualize 4.5.0 - Hotfix - "Seeing is Greek"
+
+## CHANGES
+
+- Removed unicode to display variables and inequalities per CRAN request.
+- Switched deployment from Travis to GitHub Actions
+- Added a pkgdown website.
+
 # visualize 4.4.0 - Hotfix - "Seeing is Refreshing"
 
 ## CHANGES
