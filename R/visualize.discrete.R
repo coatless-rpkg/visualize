@@ -175,5 +175,5 @@ function(dist, stat = c(0,1), params, section = "lower", strict){
   }
   
   mtext(subheader,3)
-  title(sub = paste("mu = ", signif(mean, digits=3),", sigma^2 = ",signif(var, digits=3)))
+  title(sub = bquote(mu ~ "=" ~ .(signif(mean, digits=3)) ~ ", " ~ sigma^2 ~ "=" ~ .(signif(var, digits=3))) )
 }

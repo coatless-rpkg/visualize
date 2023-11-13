@@ -160,5 +160,5 @@ function(dist, stat = c(0,1), params, section = "lower"){
     axis(1,at=stat[[2]],labels=bquote(eta[.(stat[[2]])]), line=.69)
   }
   mtext(subheader,3)
-  title(sub = paste("mu = ", mean,", sigma^2 = ", var))
+  title(sub = bquote(mu ~ "=" ~ .(mean) ~ ", " ~ sigma^2 ~ "=" ~ .(var)))
 }
