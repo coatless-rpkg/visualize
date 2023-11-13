@@ -43,4 +43,4 @@ visualize.cauchy(stat = 1, location = 4, scale = 2, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

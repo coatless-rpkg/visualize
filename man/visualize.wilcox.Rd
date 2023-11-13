@@ -44,4 +44,4 @@ visualize.wilcox(stat = 1, m = 7, n = 3, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

@@ -36,4 +36,4 @@ visualize.norm(stat = 1, mu = 3, sd = 2, section = "upper")
 \seealso{
 \code{\link[=visualize.it]{visualize.it()}} , \code{\link[=dnorm]{dnorm()}}.
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

@@ -44,4 +44,4 @@ visualize.gamma(stat = 1, alpha = 3, theta = 1, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

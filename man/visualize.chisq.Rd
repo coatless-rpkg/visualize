@@ -41,4 +41,4 @@ visualize.chisq(stat = 1, df = 3, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

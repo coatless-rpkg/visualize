@@ -46,4 +46,4 @@ visualize.beta(stat = 1, alpha = 2, beta = 3, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

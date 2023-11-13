@@ -42,3 +42,4 @@ visualize.it(dist='norm', stat = c(0,1), params = list(mu = 1, sd = 1), section 
 \author{
 James Balamuta
 }
+\keyword{continuous-distribution}

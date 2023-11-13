@@ -14,7 +14,7 @@
 #' or`"tails"`.
 #' @export
 #' @seealso [visualize.it()] , [dnorm()].
-#' @keywords visualize
+#' @keywords continuous-distribution
 #' @examples
 #' 
 #' # Evaluates lower tail.

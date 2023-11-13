@@ -22,7 +22,8 @@
 #' [visualize.it()], [visualize.beta()], [visualize.chisq()], [visualize.exp()], 
 #' [visualize.gamma()], [visualize.norm()],  [visualize.unif()], [visualize.cauchy()], 
 #' [visualize.f()], [visualize.lnorm()],  [visualize.t()], [visualize.wilcox()], 
-#' [visualize.logis()]. 
+#' [visualize.logis()].
+#' @keywords continuous-distribution
 #' @export
 #' @examples
 #' # Function does not have dist look up, must go through visualize.it

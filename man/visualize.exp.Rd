@@ -42,4 +42,4 @@ visualize.exp(stat = .5, theta = 3, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

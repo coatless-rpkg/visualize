@@ -18,7 +18,7 @@
 #' @author James Balamuta
 #' @export
 #' @seealso [visualize.it()], [dlogis()].
-#' @keywords visualize
+#' @keywords continuous-distribution
 #' @examples
 #' 
 #' # Evaluates lower tail.

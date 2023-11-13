@@ -19,7 +19,7 @@
 #' @author James Balamuta
 #' @export
 #' @seealso [visualize.it()], [dgamma()].
-#' @keywords visualize
+#' @keywords continuous-distribution
 #' @examples
 #' 
 #' # Evaluate lower tail.

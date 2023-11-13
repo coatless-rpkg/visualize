@@ -42,4 +42,4 @@ visualize.t(stat = 1, df = 4, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

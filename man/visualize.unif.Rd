@@ -39,4 +39,4 @@ visualize.unif(stat = 2, a = 1, b = 5, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

@@ -43,4 +43,4 @@ visualize.f(stat = 1, df1 = 5, df2 = 4, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}

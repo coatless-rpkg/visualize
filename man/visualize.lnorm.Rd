@@ -44,4 +44,4 @@ visualize.lnorm(stat = 1, meanlog = 3, sdlog = 1, section = "upper")
 \author{
 James Balamuta
 }
-\keyword{visualize}
+\keyword{continuous-distribution}
