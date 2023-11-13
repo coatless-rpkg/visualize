@@ -4,8 +4,7 @@
 \alias{visualize.cauchy}
 \title{Visualize Cauchy Distribution}
 \usage{
-visualize.cauchy(stat = 1, location = 2, scale = 1,
-  section = "lower")
+visualize.cauchy(stat = 1, location = 2, scale = 1, section = "lower")
 }
 \arguments{
 \item{stat}{a statistic to obtain the probability from. When using the
@@ -16,7 +15,7 @@ visualize.cauchy(stat = 1, location = 2, scale = 1,
 \item{scale}{scale parameter}
 
 \item{section}{Select how you want the statistic(s) evaluated via
-\code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
+\verb{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
 or\code{"tails"}.}
 }
 \value{

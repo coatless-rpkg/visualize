@@ -4,8 +4,7 @@
 \alias{visualize.discrete}
 \title{Graphing function for Discrete Distributions.}
 \usage{
-visualize.discrete(dist, stat = c(0, 1), params, section = "lower",
-  strict)
+visualize.discrete(dist, stat = c(0, 1), params, section = "lower", strict)
 }
 \arguments{
 \item{dist}{contains the distribution from
@@ -22,11 +21,11 @@ aware of the parameters for the distribution, consider using the
 section.}
 
 \item{section}{Select how you want the statistic(s) evaluated via
-\code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
+\verb{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
 or\code{"tails"}.}
 
 \item{strict}{Determines whether the probability will be generated as a
-strict (<, >) or equal to (<=, >=) inequality. \code{strict=} requires
+strict (<, >) or equal to (<=, >=) inequality. \verb{strict=} requires
 either values = 0 or =FALSE for equal to OR values =1 or =TRUE for strict.
 For bounded condition use: \code{strict=c(0,1)} or
 \code{strict=c(FALSE,TRUE)}.}

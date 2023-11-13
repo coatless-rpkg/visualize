@@ -7,7 +7,7 @@ visualize.distributions = list(
     type = "continuous",
     name = "Beta Distribution",
     variable = "b",
-    varsymbols = c("\u03B1","\u03B2"),
+    varsymbols = c("alpha","beta"),
     params = 2,
     init  = function(params, ...) {
       shape1 = params[[1]]; shape2 = params[[2]]
@@ -32,7 +32,7 @@ visualize.distributions = list(
   chisq = list(
     type = "continuous",
     name  = "Chi-square Distribution",
-    variable = "\u03A7\u00B2",
+    variable = "chi^2",
     varsymbols = c("r"),
     params = 1,
     init  = function(params, ...) {
@@ -60,7 +60,7 @@ visualize.distributions = list(
     type = "continuous",
     name  = "Exponential Distribution",
     variable = "e",
-    varsymbols = c("\u03B8"),
+    varsymbols = c("theta"),
     params = 1,
     init  = function(params, ...) {
       theta = params[[1]]
@@ -87,7 +87,7 @@ visualize.distributions = list(
     type = "continuous",
     name  = "Gamma Distribution",
     variable = "g",
-    varsymbols = c("\u03B1","\u03B8"),
+    varsymbols = c("alpha","theta"),
     params = 2,
     init  = function(params,  ...) {
       alpha = params[[1]]; theta = params[[2]]
@@ -114,7 +114,7 @@ visualize.distributions = list(
     type = "continuous",
     name  = "Normal Distribution",
     variable = "z",
-    varsymbols = c("\u03BC","\u03C3"),
+    varsymbols = c("mu","sigma"),
     params = 2,
     init  = function(params,  ...) {
       if(params[[2]] < 0) stop("Error: Need standard deviation >= 0")
@@ -190,7 +190,7 @@ visualize.distributions = list(
     type = "continuous",
     name = "Log Normal Distribution",
     variable = "log(z)",
-    varsymbols = c("\u03BC","\u03C3"),
+    varsymbols = c("mu","sigma"),
     params = 2,
     init  = function(params, ...) {
       if(params[[2]]<0) stop("Error: Standard Deviation is < 0!")
@@ -433,7 +433,7 @@ visualize.distributions = list(
     type = "discrete",
     name  = "Poisson Distribution",
     variable = "p",
-    varsymbols = c("\u03BB"),
+    varsymbols = c("lambda"),
     params = 1,
     init  = function(params, ...) {
       lambda = params[[1]]
@@ -463,4 +463,4 @@ class(visualize.distributions) = "distributions"
 
 
 # use sysdata
-devtools::use_data(visualize.distributions, internal = TRUE, overwrite = TRUE)
+usethis::use_data(visualize.distributions, internal = TRUE, overwrite = TRUE)

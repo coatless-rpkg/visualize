@@ -15,7 +15,7 @@ visualize.wilcox(stat = 1, m = 7, n = 3, section = "lower")
 \item{n}{Sample size from group 2.}
 
 \item{section}{Select how you want the statistic(s) evaluated via
-\code{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
+\verb{section=} either \code{"lower"},\code{"bounded"}, \code{"upper"},
 or\code{"tails"}.}
 }
 \value{

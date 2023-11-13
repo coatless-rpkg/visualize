@@ -1,36 +1,30 @@
 #' Graphing function for Continuous Distributions.
 #' 
 #' Handles how continuous distributions are graphed. Users should not use this
-#' function. Instead, users should use [visualize.it()].
+#' function. Instead, users should use [`visualize.it()`].
 #' 
-#' 
-#' @param dist contains the distribution from
-#' [visualize.distributions()].
-#' @param stat a statistic to obtain the probability from. When using the
-#' "bounded" condition, you must supply the parameter as `stat =
-#' c(lower_bound, upper_bound)`. Otherwise, a simple `stat =
-#' desired_point` will suffice.
+#' @param dist   contains a supported continuos distribution shortname.
+#' @param stat   a statistic to obtain the probability from. When using the
+#'               "bounded" condition, you must supply the parameter as 
+#'               `stat = c(lower_bound, upper_bound)`. Otherwise, a simple 
+#'               `stat = desired_point` will suffice.
 #' @param params A list that must contain the necessary parameters for each
-#' distribution. For example, `params = list(mu = 1, sd = 1)` would be for
-#' a normal distribution with mean 1 and standard deviation 1. If you are not
-#' aware of the parameters for the distribution, consider using the
-#' `visualize.`*dist_name* functions listed under the "See Also"
-#' section.
+#'               distribution. For example, `params = list(mu = 1, sd = 1)`
+#'               would be for a normal distribution with mean 1 and standard
+#'               deviation 1. If you are not aware of the parameters for the
+#'               distribution, consider using the `visualize.`*dist_name*
+#'               functions listed under the "See Also" section.
 #' @param section Select how you want the statistic(s) evaluated via
-#' `section=` either `"lower"`,`"bounded"`, `"upper"`,
-#' or`"tails"`.
-#' @author James Balamuta
-#' @seealso [visualize.it()], [visualize.beta()],
-#' [visualize.chisq()], [visualize.exp()],
-#' [visualize.gamma()], [visualize.norm()],
-#' [visualize.unif()], [visualize.cauchy()]\*,
-#' [visualize.f()]\*, [visualize.lnorm()]\*,
-#' [visualize.t()]\*, [visualize.wilcox()]\*,
-#' [visualize.logis()]\*. \cr \* = added in v2.0.
+#'               `section=` either `"lower"`,`"bounded"`, `"upper"`, or`"tails"`
+#' @author 
+#' James Balamuta
+#' @seealso 
+#' [visualize.it()], [visualize.beta()], [visualize.chisq()], [visualize.exp()], 
+#' [visualize.gamma()], [visualize.norm()],  [visualize.unif()], [visualize.cauchy()], 
+#' [visualize.f()], [visualize.lnorm()],  [visualize.t()], [visualize.wilcox()], 
+#' [visualize.logis()]. 
 #' @export
-#' @keywords visualize
 #' @examples
-#' 
 #' # Function does not have dist look up, must go through visualize.it
 #' visualize.it(dist='norm', stat = c(0,1), params = list(mu = 1, sd = 1), section = "bounded")
 #' 
@@ -79,7 +73,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
   #Creates the center title by concatenating various bits of information.
   #This may need to be optimized at a later time.
   graphmain = paste(dist$name," \n")
-  for(i in 1:length(params)){
+  for(i in seq_along(params)){
     graphmain = paste(graphmain, dist$varsymbols[i]," = ",params[[i]], " ")
   }
   
@@ -100,7 +94,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange")    
     prob = dist$probability(stat,params)
-    subheader = paste("P( ",dist$variable," \u2264 ",stat, ") = ", signif(prob, digits=3))
+    subheader = paste("P( ",dist$variable," <= ",stat, ") = ", signif(prob, digits=3))
   }
   else if(section == "bounded"){
     start = stat[[1]]; end = stat[[2]];
@@ -109,7 +103,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange");   
     prob = dist$probability(end,params) - dist$probability(start,params)
-    subheader = paste("P(",start," \u2264 ",dist$variable," \u2264 ",end,") =", signif(prob, digits=3))
+    subheader = paste("P(",start," <= ",dist$variable," <= ",end,") =", signif(prob, digits=3))
   }
   else if(section == "upper"){
     if(ub < stat){
@@ -120,7 +114,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange")  
     prob = 1-dist$probability(stat,params)
-    subheader = paste("P( ",dist$variable," \u2265 ", stat, " ) =", signif(prob, digits=3))
+    subheader = paste("P( ",dist$variable," >= ", stat, " ) =", signif(prob, digits=3))
   }
   else if(section == "tails"){
     lower_stat = stat[[1]];upper_stat=stat[[2]];
@@ -166,5 +160,5 @@ function(dist, stat = c(0,1), params, section = "lower"){
     axis(1,at=stat[[2]],labels=bquote(eta[.(stat[[2]])]), line=.69)
   }
   mtext(subheader,3)
-  title(sub = paste("\u03BC = ", mean,", \u03C3\u00B2 = ", var))
+  title(sub = bquote(mu ~ "=" ~ .(mean) ~ ", " ~ sigma^2 ~ "=" ~ .(var)))
 }
