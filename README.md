@@ -60,11 +60,18 @@ visualize.norm(1.96, section = "upper")
 <img src="man/figures/README-visualize-normal-2.png" width="50%" />
 
 ``` r
-# Shift the mean and create a bounded range.
+# Create a bounded range.
 visualize.norm(c(-1.96, 1.96), section = "bounded")
 ```
 
 <img src="man/figures/README-visualize-normal-3.png" width="50%" />
+
+``` r
+# Highlight both tails
+visualize.norm(c(-1.96, 1.96), section = "tails")
+```
+
+<img src="man/figures/README-visualize-normal-4.png" width="50%" />
 
 The parameters of the distribution can also be modified. Take for
 example the Binomial distribution.

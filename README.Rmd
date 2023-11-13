@@ -58,8 +58,10 @@ the normal distribution can be shown with:
 visualize.norm(1.96)
 # Change the location of the tail
 visualize.norm(1.96, section = "upper")
-# Shift the mean and create a bounded range.
+# Create a bounded range.
 visualize.norm(c(-1.96, 1.96), section = "bounded")
+# Highlight both tails
+visualize.norm(c(-1.96, 1.96), section = "tails")
 ```
 
 The parameters of the distribution can also be modified. Take for example the
