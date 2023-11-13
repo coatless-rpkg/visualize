@@ -79,7 +79,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
   #Creates the center title by concatenating various bits of information.
   #This may need to be optimized at a later time.
   graphmain = paste(dist$name," \n")
-  for(i in 1:length(params)){
+  for(i in seq_along(params)){
     graphmain = paste(graphmain, dist$varsymbols[i]," = ",params[[i]], " ")
   }
   
@@ -100,7 +100,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange")    
     prob = dist$probability(stat,params)
-    subheader = paste("P( ",dist$variable," \u2264 ",stat, ") = ", signif(prob, digits=3))
+    subheader = paste("P( ",dist$variable," <= ",stat, ") = ", signif(prob, digits=3))
   }
   else if(section == "bounded"){
     start = stat[[1]]; end = stat[[2]];
@@ -109,7 +109,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange");   
     prob = dist$probability(end,params) - dist$probability(start,params)
-    subheader = paste("P(",start," \u2264 ",dist$variable," \u2264 ",end,") =", signif(prob, digits=3))
+    subheader = paste("P(",start," <= ",dist$variable," <= ",end,") =", signif(prob, digits=3))
   }
   else if(section == "upper"){
     if(ub < stat){
@@ -120,7 +120,7 @@ function(dist, stat = c(0,1), params, section = "lower"){
             c(0,dist$density(path,params),0),
             col="Blue", lty=line_style, lwd=line_width, border="Orange")  
     prob = 1-dist$probability(stat,params)
-    subheader = paste("P( ",dist$variable," \u2265 ", stat, " ) =", signif(prob, digits=3))
+    subheader = paste("P( ",dist$variable," >= ", stat, " ) =", signif(prob, digits=3))
   }
   else if(section == "tails"){
     lower_stat = stat[[1]];upper_stat=stat[[2]];
@@ -166,5 +166,5 @@ function(dist, stat = c(0,1), params, section = "lower"){
     axis(1,at=stat[[2]],labels=bquote(eta[.(stat[[2]])]), line=.69)
   }
   mtext(subheader,3)
-  title(sub = paste("\u03BC = ", mean,", \u03C3\u00B2 = ", var))
+  title(sub = paste("mu = ", mean,", sigma^2 = ", var))
 }
