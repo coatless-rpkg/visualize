@@ -5,10 +5,10 @@
 
 <!-- badges: start -->
 
-[![Travis-CI Build
-Status](https://travis-ci.org/coatless/visualize.svg?branch=master)](https://travis-ci.org/coatless/visualize)
+[![R-CMD-check](https://github.com/coatless-rpkg/visualize/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/coatless-rpkg/visualize/actions/workflows/R-CMD-check.yaml)
 [![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/visualize)](http://www.r-pkg.org/pkg/visualize)[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/visualize)](https://cran.r-project.org/package=visualize)
+downloads](http://cranlogs.r-pkg.org/badges/visualize)](http://www.r-pkg.org/pkg/visualize)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/visualize)](https://cran.r-project.org/package=visualize)
 <!-- badges: end -->
 
 The goal of visualize is to graph the pdf or pmf and highlight what area
