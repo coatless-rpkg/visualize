@@ -16,7 +16,7 @@ Description: Graphs the pdf or pmf and highlights what area or probability is
     to inequalities.  Also provided on the graph is the mean and variance of
     the distribution. 
 License: MIT + file LICENSE
-URL: https://github.com/coatless-rpkg/visualize, https://thecoatlessprofessor.com/projects/visualize/, http://r-pkg.thecoatlessprofessor.com/visualize/
+URL: https://github.com/coatless-rpkg/visualize, https://thecoatlessprofessor.com/projects/visualize/, https://r-pkg.thecoatlessprofessor.com/visualize/
 BugReports: https://github.com/coatless-rpkg/visualize/issues
 Encoding: UTF-8
 RoxygenNote: 7.2.3
