@@ -1,0 +1,136 @@
+# visualize
+
+The goal of visualize is to graph the pdf or pmf and highlight what area
+or probability is present in user defined locations. Visualize is able
+to provide lower tail, bounded, upper tail, and two tail calculations.
+Supports strict and equal to inequalities. Also provided on the graph is
+the mean and variance of the distribution.
+
+## Installation
+
+You can install the released version of visualize from
+[CRAN](https://CRAN.R-project.org) with:
+
+``` r
+
+install.packages("visualize")
+```
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+
+# install.packages("devtools")
+devtools::install_github("coatless/visualize")
+```
+
+## Examples
+
+To use visualize, load the package with:
+
+``` r
+
+library("visualize")
+```
+
+Then, construct a graph by following the `visualize.dist()` pattern. For
+example, the normal distribution can be shown with:
+
+``` r
+
+# Graph a standard normal distribution with a z-score of 1.96
+visualize.norm(1.96)
+```
+
+![](reference/figures/README-visualize-normal-1.png)
+
+``` r
+
+# Change the location of the tail
+visualize.norm(1.96, section = "upper")
+```
+
+![](reference/figures/README-visualize-normal-2.png)
+
+``` r
+
+# Create a bounded range.
+visualize.norm(c(-1.96, 1.96), section = "bounded")
+```
+
+![](reference/figures/README-visualize-normal-3.png)
+
+``` r
+
+# Highlight both tails
+visualize.norm(c(-1.96, 1.96), section = "tails")
+```
+
+![](reference/figures/README-visualize-normal-4.png)
+
+The parameters of the distribution can also be modified. Take for
+example the Binomial distribution.
+
+``` r
+
+visualize.binom(stat = 9, size = 20, p = 0.5)
+```
+
+![](reference/figures/README-visualize-binomial-1.png)
+
+``` r
+
+# Visualize the binominal distribution with a higher size and lower probability.
+visualize.binom(stat = 9, size = 24, p = 0.25)
+```
+
+![](reference/figures/README-visualize-binomial-2.png)
+
+Discrete distributions can also handle a level of strict (`<`, `>`) or
+equal to (`<=`, `>=`) inequality.
+
+``` r
+
+# Create a strict inequality (lower < x < higher)
+visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
+  strict = c(TRUE, TRUE))
+```
+
+![](reference/figures/README-discrete-inequalities-1.png)
+
+``` r
+
+# Allow for equality on either side only on the right side of the bounded region.
+visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
+  strict = c(TRUE, FALSE))
+```
+
+![](reference/figures/README-discrete-inequalities-2.png)
+
+``` r
+
+# Allow for equality on either side of the inequality (lower <= x <= higher)
+visualize.pois(stat = c(4, 6), lambda = 3.5, section = "bounded",
+  strict = c(FALSE, FALSE))
+```
+
+![](reference/figures/README-discrete-inequalities-3.png)
+
+## Author
+
+James Joseph Balamuta
+
+## Citing the `visualize` package
+
+To ensure future development of the package, please cite `visualize`
+package if used during an analysis or simulation study. Citation
+information for the package may be acquired by using in *R*:
+
+``` r
+
+citation("visualize")
+```
+
+## License
+
+MIT License
